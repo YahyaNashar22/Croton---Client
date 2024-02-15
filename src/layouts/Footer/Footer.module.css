@@ -1,0 +1,41 @@
+.wrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    width: 100vw;
+    padding: 40px;
+}
+.wrapper, .header, .list, .item, .reference, .content{
+    background-color: var(--green);
+}
+.left, .middle, .right{
+    width: 30%;
+}
+.header{
+    text-align: center;
+    line-height: 50px;
+}
+.list{
+    list-style: none;
+    text-align: center;
+}
+.content{
+    line-height: 40px;
+    font-style: italic;
+}
+.reference{
+    color: rgb(28, 130, 28);
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+    line-height: 40px;
+}
+
+@media(max-width:770px){
+    .wrapper{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .left, .middle, .right{
+        width: 100%;
+    }
+}

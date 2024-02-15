@@ -1,0 +1,108 @@
+.wrapper{
+    height: 150px;
+    width: 100vw;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left{
+    height: 100px;
+    width: 100px;
+    cursor: url('../../assets/cursors/hand.png'),auto !important;
+}
+.middle{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.right{
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    border-radius: 100px;
+    object-fit: contain;
+    cursor: url('../../assets/cursors/hand.png'),auto !important;
+}
+.links, .signout, .activeLinks{
+    text-decoration: none;
+    padding: 10px;
+    color: var(--black);
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+    font-size: 20px;
+    position: relative;
+    transition: 0.5s ease;
+}
+.links:hover, .activeLinks:hover{
+    color: var(--green);
+}
+.activeLinks::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 63%;
+    transition: width 0.5s ease;
+    border-bottom: 2px solid var(--green);
+}
+.links , .activeLinks{
+    position: relative;
+    height: 100%;
+}
+.links::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 63%;
+    transition: width 0.5s ease;
+    border-bottom: 2px solid var(--green);
+}
+.links:hover::before{
+    width: 100%;
+}
+.signout{
+    border: 2px solid var(--green);
+    border-radius: 16px;
+    
+}
+.signout:hover{
+    color: var(--white);
+    background-color: var(--green);
+}
+
+/* Mobile View */
+
+.mobileWrapper{
+    display: none;
+    width: 100vw;
+    height: 150px;
+}
+
+@media (max-width:770px) {
+    .wrapper{
+        display: none;
+    }
+    .mobileWrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 40px;
+    }
+    .mobileList{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 30px;
+        padding: 40px 0;
+    }
+    .menu, .burger, .close{
+        cursor: url('../../assets//cursors/hand.png'), auto !important;
+    }
+}
