@@ -1,10 +1,11 @@
 import React from 'react'
 import style from "./NavBar.module.css"
 import {Link, useLocation, useNavigate} from "react-router-dom"
-import { menuStore } from '../../store'
+import { menuStore, userStore } from '../../store'
 import omar from "../../assets/images/omar.png"
 import burger from "../../assets/icons/burger.svg"
 import x from "../../assets/icons/x.svg"
+import axios from 'axios'
 
 
 function NavBar() {
@@ -13,6 +14,14 @@ function NavBar() {
   const navigate = useNavigate();
 
   const {open,openClose} = menuStore();
+  const {user, setUser} = userStore();
+
+  const logoutHandler = () =>{
+    axios.get(`${process.env.REACT_APP_BACK_END_URL}users/logout`).then(res=>{
+      navigate('/login');
+      setUser({});
+    }).catch(err=>{console.log(err.message)})
+  }
 
   return (
     <>
@@ -26,7 +35,10 @@ function NavBar() {
           <Link to="/nutrition-center" className={location.pathname==="/nutrition-center" ? style.activeLinks : style.links}>Nutrition Center</Link>
       </aside>
       <aside className={style.right}>
-          <Link to="/login-signup" className={style.signout}>sign out</Link>
+          <button type='submit' onClick={logoutHandler} className={style.signout}>sign out</button>
+          <Link to="/profile" className={style.profilePic}>
+            <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile Picture" width={'50px'} height={'50px'}/>
+            </Link>
       </aside>
     </nav>
     {/* Mobile View */}
@@ -44,7 +56,10 @@ function NavBar() {
             <Link to="/body" className={location.pathname==="/body" ? style.activeLinks : style.links}>Body</Link>
             <Link to="/mind" className={location.pathname==="/mind" ? style.activeLinks : style.links}>Mind</Link>
             <Link to="/nutrition-center" className={location.pathname==="/nutrition-center" ? style.activeLinks : style.links}>Nutrition Center</Link>
-            <Link to="/login-signup" className={style.signout}>sign out</Link>
+            <button type='submit' onClick={logoutHandler} className={style.signout}>sign out</button>
+            <Link to="/profile" className={style.profilePic}>
+            <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile Picture" width={'50px'} height={'50px'}/>
+            </Link>
           </section>
           </>}
       </aside>

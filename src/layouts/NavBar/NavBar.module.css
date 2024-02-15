@@ -18,10 +18,13 @@
     justify-content: space-between;
 }
 .right{
-    width: 120px;
+    width: 300px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+.profilePic{
+    border-radius: 100px ;
 }
 .logo{
     border-radius: 100px;

@@ -17,7 +17,10 @@
 
 :root{
   --green:#DCE1B4;
+  --navy:#000435;
   --black:#050505;
+  --lighter-black:#2c2c2c; 
+  --grey:#7b7b7b;
   --pink:#F5C7D6;
   --white:#F4F4F4;
 }

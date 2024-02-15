@@ -18,3 +18,18 @@ export const userCredentialsStore = create((set)=>({
     role:"user",
     gender:"",
 }))
+
+export const passwordStore = create((set)=>({
+  visible:false,
+  setVisible : ()=> set((state)=>({visible: !state.visible}))
+}))
+
+export const pendingStore = create((set)=>({
+  pending:false,
+  setPending: () =>set((state)=>({pending : !state.pending}))
+}))
+
+export const userStore = create((set)=>({
+  user:{},
+  setUser: (data)=>set(()=>({user: data}))
+}))

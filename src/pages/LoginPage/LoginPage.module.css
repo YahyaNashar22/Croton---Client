@@ -1,0 +1,16 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+.img{
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}

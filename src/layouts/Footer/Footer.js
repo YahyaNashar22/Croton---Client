@@ -16,6 +16,9 @@ function Footer() {
             <li className={style.item}>
             loading animation was taken from <a className={style.reference} href='https://loading.io/'>loading.io</a>
             </li>
+            <li className={style.item}>
+            illustrations were taken from <a className={style.reference} href="https://storyset.com/">storyset.com</a>
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>

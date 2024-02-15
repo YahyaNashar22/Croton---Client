@@ -2,51 +2,121 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    background-color: white;
+    padding: 0 20px;
+}
+.header, .wrapper .container,.subHeader,label, .inp, .submit, .forgotPassword ,.signupLink ,.signupTxt, .googleBtn ,.googleicon, .googleTxt, .greenText, .eye{
+    background-color: white;
 }
 .wrapper{
-    width: 60%;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    width: 600px;
+    height: 700px;
 }
 .container{
     width: 100%;
+    position: relative;
+    align-items: center;
+    width: 60%;
+   backdrop-filter: blur(10px);
 }
 .header{
     font-size: 36px;
     line-height: 60px;
+    margin-left: 10px;
 }
 .subHeader{
     font-size: 28px;
-    color: #c0c0c0;
+    color: var(--lighter-black);
     line-height: 60px;
+    margin-left: 10px;
+    margin-bottom: 40px;
 }
 .label{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    line-height: 40px;
+    width: 300px;
+    opacity: 0.6;
 }
 .inp{
-    padding: 10px 20px;
+    padding: 10px 0;
     color: var(--black);
     transition: 0.5s ease;
-    border-radius: 16px;
-    border: 1px solid var(--black);
-    width: 15%;
+    border: none;
+    border-bottom: 1px solid var(--green);
+    width: 100%;
     cursor: url('../../assets/cursors/txt.png'), auto !important;
+    outline: none;
+    margin: 20px 0;
 }
 .inp::placeholder{
-    color: #c0c0c0;
-    font-style: italic;
+    color: var(--grey);
+    font-family: sans-serif;
+    font-weight: 700;
 }
 .inp:focus::placeholder{
     opacity: 0;
 }
-.inp:focus{
-    box-shadow: 8px 8px 3px var(--black);
-    transform: translateY(-8px);
-    border: 0px solid white;
-    width: 30%;
+.submit, .submitdisabled{
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 16px;
+    transition: 0.5s ease;
+    border: 1px solid var(--green);
+}
+.submit{
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.submitdisabled{
+    background-color: var(--green);
+}
+.submit:hover{
+    background-color: var(--green);
+}
+.submit:active{
+    transform: translateY(8px);
+}
+.signupTxt{
+    line-height: 60px;
+    opacity: 0.6;
+    text-align: center;
+    margin-left: 20px;
+}
+.signupLink{
+    text-decoration: none;
+    color: var(--lighter-black);
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.eye{
+    position: absolute;
+    bottom: 13.5rem;
+    right: 2rem;
+    scale: 1.2;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.forgotPassword{
+text-decoration: none;
+color: var(--grey);
+margin: 20px 0 ;
+cursor: url('../../assets/cursors/hand.png') ,auto!important;
+}
+.googleTxt{
+    opacity: 0.6;
+    margin: 10px 0;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.googleBtn{
+    border: none;
+    width: 50px;
+    height: 20px;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.googleicon{
+    scale: 1.5;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
 }

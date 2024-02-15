@@ -7,7 +7,8 @@ const LazyHome = React.lazy(()=>import('../pages/Home/Home.js'));
 const LazyBody = React.lazy(()=>import('../pages/BodyPage/BodyPage.js'));
 const LazyMind = React.lazy(()=>import('../pages/MindPage/MindPage.js'));
 const LazyNutritionCenter = React.lazy(()=>import('../pages/NutritionCenterPage/NutritionCenterPage.js'));
-const LazyLoginSignup = React.lazy(()=>import('../pages/LoginSignup/LoginSignup.js'));
+const LazyLogin = React.lazy(()=>import('../pages/LoginPage/LoginPage.js'));
+const LazySignup = React.lazy(()=>import('../pages/SignupPage/SignupPage.js'));
 
 function AppRoutes() {
   return (
@@ -34,9 +35,14 @@ function AppRoutes() {
               </React.Suspense>
             }/>
         </Route>
-        <Route path='/login-signup' element={
+        <Route path='/login' element={
               <React.Suspense fallback={<Loading />}>
-                <LazyLoginSignup />
+                <LazyLogin />
+              </React.Suspense>
+            }/>
+            <Route path='/signup' element={
+              <React.Suspense fallback={<Loading />}>
+                <LazySignup />
               </React.Suspense>
             }/>
     </Routes>
