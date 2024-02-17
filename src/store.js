@@ -6,17 +6,17 @@ export const menuStore = create((set) => ({
 }))
 
 export const userCredentialsStore = create((set)=>({
-    fullname:"",
-    email:"",
-    password:"",
+    fullname:null,
+    email:null,
+    password:null,
     phoneNumber:null,
-    profilePicture:"",
-    photoURL:"",
+    profilePicture:null,
+    photoURL:null,
     age:null,
     height:null,
     weight:null,
     role:"user",
-    gender:"",
+    gender:null,
 }))
 
 export const passwordStore = create((set)=>({

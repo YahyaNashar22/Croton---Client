@@ -1,9 +1,13 @@
 import React from 'react'
 import style from "./Footer.module.css"
+import { useLocation } from 'react-router-dom'
 
 function Footer() {
+
+  const location = useLocation();
+
   return (
-    <footer className={style.wrapper}>
+    <footer className={location.pathname==='/body' || location.pathname==='/mind'?style.disappear: style.wrapper}>
       <aside className={style.left}>
           <h3 className={style.header}>Who am I</h3>
           <p className={style.content}>

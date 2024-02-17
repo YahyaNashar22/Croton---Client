@@ -3,14 +3,12 @@ import './App.css';
 import AppRoutes from './routes/AppRoutes.js';
 import axios from 'axios';
 import { userStore } from './store.js';
-import { useLocation } from 'react-router-dom';
 
 axios.defaults.withCredentials = true
 
 
 function App() {
 
-  const location = useLocation();
   const {user, setUser} = userStore();
 
   const  getUserData = async() =>{

@@ -1,9 +1,12 @@
 import React from 'react'
-import style from "./BodyPage.module.css"
+import GymScene from '../../components/GymScene/GymScene'
 
 function BodyPage() {
+
   return (
-    <div>BodyPage</div>
+    <>
+        <GymScene />
+    </>
   )
 }
 

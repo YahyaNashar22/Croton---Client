@@ -6,6 +6,9 @@
     align-items: center;
     justify-content: space-between;
 }
+.disappear{
+    display: none;
+}
 .left{
     height: 100px;
     width: 100px;

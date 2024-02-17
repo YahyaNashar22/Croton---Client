@@ -1,9 +1,11 @@
 import React from 'react'
-import style from "./MindPage.module.css"
+import DeskScene from '../../components/DeskScene/DeskScene'
 
 function MindPage() {
   return (
-    <div>MindPage</div>
+    <>
+    <DeskScene />
+    </>
   )
 }
 

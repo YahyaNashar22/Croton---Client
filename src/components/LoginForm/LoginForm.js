@@ -6,6 +6,8 @@ import eye from "../../assets/icons/eye.svg";
 import closedEye from "../../assets/icons/closedEye.svg";
 import google from "../../assets/icons/google.svg";
 import axios from "axios";
+import { auth, provider } from "../../firebase.js";
+import { signInWithPopup } from "@firebase/auth";
 
 function LoginForm() {
 
@@ -25,7 +27,7 @@ const {visible, setVisible} = passwordStore();
 const { pending, setPending} = pendingStore();
 
 //set user data
-const { user,setUser } = userStore()
+const { setUser } = userStore()
 
 //send data to the backend
 const handleSubmit = (e)=>{
@@ -39,6 +41,42 @@ setPending();
 }).catch((err)=>{console.log(err.message)});
 }
 
+//GOOGLE SIGN UP
+
+const handleGoogle = () => {
+  signInWithPopup(auth, provider)
+    .then((data) => {
+      setPending()
+      axios
+        .post(
+          `${process.env.REACT_APP_BACK_END_URL}users/gsign`,
+          {
+            fullname: data.user.displayName,
+            email: data.user.email,
+            photoURL: data.user.photoURL,
+            role: "user",
+          }
+        )
+        .then((res) => {
+          setPending();
+          if (res) {
+            setUser(res.data.userToken.data);
+            setPending();
+          } else {
+            setUser({});
+            setPending();
+          }
+          navigate("/");
+        });
+    })
+    .catch((err) => {
+      setPending();
+      if (err.code === "auth/popup-closed-by-user") {
+        console.log("exited the google auth");
+      }
+    });
+};
+
   return (
     <section className={style.wrapper}>
         <h1 className={style.header}>
@@ -48,15 +86,19 @@ setPending();
           Kindly Enter Your Details Below
         </p>
       <form className={style.container} method="POST">
+      <div className={style.inpContainer}>
         <label htmlFor='email' className={style.label}>
           Email
         </label>
           <input id='email' className={style.inp} placeholder='enter your email' type='email' name='email' onChange={handleChange} />
+          </div>
+          <div className={style.inpContainer}>
         <label htmlFor='password' className={style.label}>
           Password
         </label>
           <input id='password' className={style.inp} placeholder='enter your password' type={visible ? 'text':'password'} name='password' onChange={handleChange} required/>
             <img src={visible ? eye : closedEye} alt="show password" className={style.eye} onClick={()=>setVisible()} />
+            </div>
         {!pending?
         <button type='submit' onClick={handleSubmit} className={style.submit}>Log in</button>:
         <button disabled className={style.submitdisabled}>Logging you in</button>
@@ -67,9 +109,10 @@ setPending();
           <span style={{opacity:"0.6", margin:"0 20px", backgroundColor:"white"}}>or</span>
           <hr style={{display:"inline-block", width:"100px"}} />
         </div>
-        <p className={style.googleTxt}>log in using <button type='submit' className={style.googleBtn}><img className={style.googleicon} src={google} alt='google' /> </button></p>
+        <p className={style.googleTxt}>log in using <button type='button' onClick={handleGoogle} className={style.googleBtn}><img className={style.googleicon} src={google} alt='google' /> </button></p>
       </form>
       <p className={style.signupTxt}>Don't have an account ? <Link to='/signup' className={style.signupLink}>Sign up now !</Link></p>
+      <Link to='/' className={style.home}>Back to home page</Link>
     </section>
   )
 }

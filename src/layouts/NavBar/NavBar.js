@@ -25,7 +25,7 @@ function NavBar() {
 
   return (
     <>
-    <nav className={style.wrapper}>
+    <nav className={location.pathname==='/body' || location.pathname==='/mind'?style.disappear: style.wrapper}>
       <aside className={style.left} onClick={()=>navigate('/')}>
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
       </aside>
@@ -35,10 +35,16 @@ function NavBar() {
           <Link to="/nutrition-center" className={location.pathname==="/nutrition-center" ? style.activeLinks : style.links}>Nutrition Center</Link>
       </aside>
       <aside className={style.right}>
+          { user._id ?
+          <>
           <button type='submit' onClick={logoutHandler} className={style.signout}>sign out</button>
           <Link to="/profile" className={style.profilePic}>
             <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile Picture" width={'50px'} height={'50px'}/>
             </Link>
+            </>
+          :
+          <button type='submit' onClick={logoutHandler} className={style.signout}>sign in</button>
+          }
       </aside>
     </nav>
     {/* Mobile View */}
@@ -56,10 +62,16 @@ function NavBar() {
             <Link to="/body" className={location.pathname==="/body" ? style.activeLinks : style.links}>Body</Link>
             <Link to="/mind" className={location.pathname==="/mind" ? style.activeLinks : style.links}>Mind</Link>
             <Link to="/nutrition-center" className={location.pathname==="/nutrition-center" ? style.activeLinks : style.links}>Nutrition Center</Link>
+            <>
+            {user._id?
+            <>
             <button type='submit' onClick={logoutHandler} className={style.signout}>sign out</button>
             <Link to="/profile" className={style.profilePic}>
             <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile Picture" width={'50px'} height={'50px'}/>
             </Link>
+            </>
+            :<button type='submit' onClick={logoutHandler} className={style.signout}>sign in</button>}
+            </>
           </section>
           </>}
       </aside>

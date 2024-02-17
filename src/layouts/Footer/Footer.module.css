@@ -6,6 +6,9 @@
     width: 100vw;
     padding: 40px;
 }
+.disappear{
+    display: none;
+}
 .wrapper, .header, .list, .item, .reference, .content{
     background-color: var(--green);
 }

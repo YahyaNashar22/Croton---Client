@@ -6,7 +6,7 @@
     background-color: white;
     padding: 0 20px;
 }
-.header, .wrapper .container,.subHeader,label, .inp, .submit, .forgotPassword ,.signupLink ,.signupTxt, .googleBtn ,.googleicon, .googleTxt, .greenText, .eye{
+.header,.inpContainer, .wrapper .container,.subHeader,label, .inp, .submit, .forgotPassword ,.signinLink ,.signinTxt, .googleBtn ,.googleicon, .googleTxt, .greenText, .home, .eye{
     background-color: white;
 }
 .wrapper{
@@ -20,7 +20,6 @@
     position: relative;
     align-items: center;
     width: 60%;
-   backdrop-filter: blur(10px);
 }
 .header{
     font-size: 36px;
@@ -44,7 +43,7 @@
     transition: 0.5s ease;
     border: none;
     border-bottom: 1px solid var(--green);
-    width: 100%;
+    width: 100% !important;
     cursor: url('../../assets/cursors/txt.png'), auto !important;
     outline: none;
     margin: 10px 0;
@@ -88,10 +87,15 @@
     color: var(--lighter-black);
     cursor: url('../../assets/cursors/hand.png'), auto !important;
 }
+.inpContainer{
+    position: relative;
+    width: 100%; 
+    /* HERE MY GGGGGGGGGGGGG */
+}
 .eye{
     position: absolute;
-    bottom: 13.5rem;
-    right: 2rem;
+    bottom: 1.5rem;
+    right: 0.5rem;
     scale: 1.2;
     cursor: url('../../assets/cursors/hand.png'), auto !important;
 }
@@ -119,4 +123,26 @@ cursor: url('../../assets/cursors/hand.png') ,auto!important;
 .googleicon{
     scale: 1.5;
     cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+
+.home{
+    text-align: center;
+    text-decoration: none;
+    color: var(--grey);
+    margin-left: 20px;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+
+@media (max-width:450px){
+    .wrapper{
+        width:100% ;
+    }
+}
+@media (max-width:1067px){
+    .header,.inpContainer, .wrapper .container,.subHeader,label, .inp, .submit, .forgotPassword ,.signinLink ,.signinTxt, .googleBtn ,.googleicon, .googleTxt, .greenText, .home, .eye{
+        background-color: transparent;
+    }
+    .wrapper{
+        background-image: url('../../assets/images/Gym.gif');
+    }
 }
