@@ -23,6 +23,12 @@ function Footer() {
             <li className={style.item}>
             illustrations were taken from <a className={style.reference} href="https://storyset.com/">storyset.com</a>
             </li>
+            <li className={style.item}>
+            Modular Gym <a className={style.reference} href="https://skfb.ly/6VTUu"> by Kristen Brown </a> is licensed under Creative Commons Attribution <a className={style.reference} href="http://creativecommons.org/licenses/by/4.0/">sketchfab.com</a>.
+            </li>
+            <li className={style.item} >
+                Desk Model <a className={style.reference} href='https://www.blendswap.com/blend/28232'>blendswap.com</a> by pinidumelan
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>

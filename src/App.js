@@ -3,11 +3,17 @@ import './App.css';
 import AppRoutes from './routes/AppRoutes.js';
 import axios from 'axios';
 import { userStore } from './store.js';
+import {
+  QueryClient,
+  QueryClientProvider
+} from 'react-query'
 
 axios.defaults.withCredentials = true
 
 
 function App() {
+
+  const queryClient = new QueryClient()
 
   const {user, setUser} = userStore();
 
@@ -27,9 +33,11 @@ useEffect(()=>{
     getUserData();
 },[user])
   return (
+    <QueryClientProvider client={queryClient}>
     <div className="App">
       <AppRoutes />
     </div>
+    </QueryClientProvider>
   );
 }
 

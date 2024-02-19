@@ -1,0 +1,39 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    list-style:url('../../assets/cursors/dumbell.png');
+    padding: 0;
+    list-style-position: inside;
+}
+.item{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 26px;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+    transition: 0.5s ease;
+    padding-bottom: 10px ;
+    width: 30%;
+    text-decoration: none;
+    color: var(--black);
+}
+.item:hover{
+    scale: 1.1;
+}
+.maleColors{
+    border-bottom: 1px solid var(--navy);
+}
+.maleColors:hover{
+    color: var(--navy);
+}
+.femaleColors{
+    border-bottom: 1px solid var(--pink);
+}
+.femaleColors:hover{
+    color: var(--pink);
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import style from "./NavBar.module.css"
 import {Link, useLocation, useNavigate} from "react-router-dom"
 import { menuStore, userStore } from '../../store'
@@ -9,6 +9,23 @@ import axios from 'axios'
 
 
 function NavBar() {
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -22,10 +39,9 @@ function NavBar() {
       setUser({});
     }).catch(err=>{console.log(err.message)})
   }
-
   return (
     <>
-    <nav className={location.pathname==='/body' || location.pathname==='/mind'?style.disappear: style.wrapper}>
+    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={location.pathname==='/body' || location.pathname==='/mind'?style.disappear:style.wrapper}>
       <aside className={style.left} onClick={()=>navigate('/')}>
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
       </aside>
@@ -35,11 +51,11 @@ function NavBar() {
           <Link to="/nutrition-center" className={location.pathname==="/nutrition-center" ? style.activeLinks : style.links}>Nutrition Center</Link>
       </aside>
       <aside className={style.right}>
-          { user._id ?
+          { user.email ?
           <>
           <button type='submit' onClick={logoutHandler} className={style.signout}>sign out</button>
           <Link to="/profile" className={style.profilePic}>
-            <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile Picture" width={'50px'} height={'50px'}/>
+            <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile" width={'50px'} height={'50px'}/>
             </Link>
             </>
           :
@@ -48,7 +64,7 @@ function NavBar() {
       </aside>
     </nav>
     {/* Mobile View */}
-    <nav className={style.mobileWrapper}>
+    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={style.mobileWrapper}>
       <aside className={style.left} onClick={()=>navigate('/')}>
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
       </aside>
@@ -63,11 +79,11 @@ function NavBar() {
             <Link to="/mind" className={location.pathname==="/mind" ? style.activeLinks : style.links}>Mind</Link>
             <Link to="/nutrition-center" className={location.pathname==="/nutrition-center" ? style.activeLinks : style.links}>Nutrition Center</Link>
             <>
-            {user._id?
+            {user.email?
             <>
             <button type='submit' onClick={logoutHandler} className={style.signout}>sign out</button>
             <Link to="/profile" className={style.profilePic}>
-            <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile Picture" width={'50px'} height={'50px'}/>
+            <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile" width={'50px'} height={'50px'}/>
             </Link>
             </>
             :<button type='submit' onClick={logoutHandler} className={style.signout}>sign in</button>}

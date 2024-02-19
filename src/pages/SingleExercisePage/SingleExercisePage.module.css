@@ -1,0 +1,28 @@
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+.content{
+    font-size: 24px;
+    line-height: 40px;
+    text-align: start;
+    width: 40%;
+    padding-left: 20px;
+}
+.image{
+    border-radius: 16px;
+}
+.green{
+    background: transparent;
+    color: var(--green);
+}
+.maleColors{
+    color: var(--navy);
+}
+.femaleColors{
+    color: var(--pink);
+}

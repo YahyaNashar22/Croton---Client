@@ -13,11 +13,15 @@
 }
 *::selection{
   color: var(--green);
+  -webkit-font-smoothing: antialiased;
 }
 
 :root{
-  --green:#DCE1B4;
-  --navy:#000435;
+  --background-green:#DCE1B4;
+  --green:#92E3A9;
+  --accent1-green:#b3bf58;
+  --accent-green:#92E3A9;
+  --navy:#3E92CC;
   --black:#050505;
   --lighter-black:#2c2c2c; 
   --grey:#7b7b7b;

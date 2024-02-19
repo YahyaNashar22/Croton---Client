@@ -24,10 +24,20 @@
 }
 .link:hover{
     font-size: 36px;
-    color: var(--green);
+}
+.maleColors:hover{
+    color: var(--navy);
+}
+.femaleColors:hover{
+    color: var(--pink);
+}
+.maleColors:last-child{
+    color: var(--navy);
+}
+.femaleColors:last-child{
+    color: var(--pink);
 }
 .homelink{
-    color: var(--green);
     font-size: 26px;
 }
 .homelink:hover{

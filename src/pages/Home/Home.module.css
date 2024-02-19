@@ -1,0 +1,138 @@
+.wrapper{
+    width: 100%;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.header{
+    font-size: 64px;
+    color: var(--accent-black);
+}
+.callToAction{
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px 40px;
+    background-color: var(--black);
+    position: absolute;
+    bottom: 10rem;
+    font-size: 36px;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+    border-radius: 80px;
+    transition: 0.5s ease;
+}
+.callToAction:hover{
+    background-color: var(--green);
+    box-shadow: 10px 10px 0px var(--background-green);
+    transform: rotateX(20deg) translateX(10px);
+}
+.sections{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: auto;
+    transition: 0.5s ease;
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.sectionHeader{
+    color: var(--accent-green);
+    font-size: 60px;
+}
+.green{
+    color: var(--accent-green);
+}
+.text{
+    width: 50%;
+    line-height: 50px;
+    font-size: 26px;
+}
+.list{
+    list-style:url('../../assets/cursors/book.png');
+    width: 100%;
+}
+.subHeader{
+    color: var(--accent-green);
+    line-height: 120px;
+    font-size: 40px;
+}
+.btnContainer, .finaltext, .login, .signup{
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.btnContainer{
+    margin-top: 100px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+    padding: 20px 40px;
+    background-color: var(--black);
+    border-radius: 100px;
+    transition: 0.5s ease;
+    font-size: 36px;
+    width: 200px;
+    text-align: left;
+    box-shadow: 40px 40px 10px var(--green);
+}
+.btnContainer>.login , .btnContainer> .signup{
+    display: none;
+}
+.btnContainer:hover{
+    width: 100%;
+    color: transparent;
+    box-shadow: 20px 20px 100px var(--green);
+
+}
+.btnContainer:hover > .login, .btnContainer:hover > .signup{
+    display: initial;
+}
+.login, .signup{
+    color: var(--white);
+    padding: 20px 40px;
+    background-color: var(--black);
+    border-radius: 80px;
+    transition: 0.5s ease;
+    font-size: 36px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.login:hover{
+    background-color: var(--green);
+    box-shadow: 20px 10px 0px var(--background-green);
+    transform: rotateX(20deg) translateX(20px);
+}
+ .signup:hover{
+    background-color: var(--green);
+    box-shadow: -20px 10px 0px var(--background-green);
+    transform: rotateX(20deg) translateX(-20px);
+}
+.scrollable{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+@media (max-width:1375px){
+    .sections{
+        justify-content: center;
+    }
+    .content{
+        flex-direction: column;
+        row-gap: 100px;
+    }
+}
