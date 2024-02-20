@@ -1,0 +1,69 @@
+.wrapper, .item, .content, .clock, .startbtn, .clockImg{
+    background-color: transparent;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 16px;
+    height: 300px;
+    width: 600px;
+    padding: 10px 20px;
+    position: relative;
+    font-style: italic;
+    transition: 0.5s ease;
+}
+.content{
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+}
+.clock{
+    padding-right: 10px;
+}
+.startbtn{
+   position: absolute;
+   right: 2rem;
+   bottom: 1rem;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 16px;
+   cursor: url('../../assets/cursors/dumbell.png'), auto !important;
+   transition: 0.5s ease;
+}
+.maleColors{
+    color: var(--navy);
+    border: 1px solid var(--navy);
+}
+.startbtn.maleColors:hover{
+    color: var(--white);
+    background-color: var(--navy);
+}
+.femaleColors{
+    color: var(--pink);
+    border: 1px solid var(--pink);
+}
+.startbtn.femaleColors:hover{
+    color: var(--white);
+    background-color: var(--pink);
+}
+.item.maleColors{
+    border: 1px solid var(--navy);
+    background: url('../../assets/images/muscularman.jpg');
+    background-size: cover;
+}
+.item:hover{
+   box-shadow: 10px 10px 0px var(--green);
+   transform: translateY(-10px);
+}
+.item.femaleColors{
+    border: 1px solid var(--pink);
+    background: url('../../assets/images/muscularwoman.jpg');
+    background-size: cover;
+}

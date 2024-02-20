@@ -12,6 +12,7 @@ const LazySignup = React.lazy(()=>import('../pages/SignupPage/SignupPage.js'));
 const LazyExercise = React.lazy(()=>import('../pages/ExercisePage/ExercisePage.js'))
 const LazySingleExercise = React.lazy(()=>import('../pages/SingleExercisePage/SingleExercisePage.js'))
 const LazyTrainingPlan = React.lazy(()=>import("../pages/TrainingPlanPage/TrainingPlanPage.js"))
+const LazySingleTrainingPlan = React.lazy(()=>import("../pages/SingleTrainingPlanPage/SingleTrainingPlanPage.js"))
 
 function AppRoutes() {
   return (
@@ -50,6 +51,11 @@ function AppRoutes() {
             <Route path='/trainingplans' element={
               <React.Suspense fallback={<Loading />}>
                 <LazyTrainingPlan />
+              </React.Suspense>
+            }/>
+            <Route path='/trainingplans/getone/:id' element={
+              <React.Suspense fallback={<Loading />}>
+                <LazySingleTrainingPlan />
               </React.Suspense>
             }/>
         </Route>

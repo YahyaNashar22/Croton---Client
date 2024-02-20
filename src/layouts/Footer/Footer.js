@@ -38,6 +38,15 @@ function Footer() {
             <li className={style.item}>
             <a className={style.reference} href="https://www.freepik.com/free-ai-image/international-day-education-scene-with-fantasy-style_94193009.htm#query=library&position=16&from_view=search&track=sph&uuid=6f34f319-c95a-46e6-a74d-ade443742998">Image by freepik</a>
             </li>
+            <li className={style.item}>
+            <a className={style.reference} href="https://www.freepik.com/free-ai-image/close-up-athlete-training_72628484.htm#query=fitness&position=49&from_view=search&track=sph&uuid=06a34531-e3f9-4253-a14b-18473a936e66">Image by freepik</a>
+            </li>
+            <li className={style.item}>
+            Image by <a className={style.reference} href="https://www.freepik.com/free-photo/modern-gym-composition-with-sport-elements_3376861.htm#query=fitness%20pink&position=28&from_view=search&track=ais&uuid=5a32794f-d1e1-4f08-a581-f66fcaf75aec">Freepik</a>
+            </li>
+            <li className={style.item}>
+            <a className={style.reference} href="https://www.freepik.com/free-photo/female-athlete-training-hard-gym-fitness-healthy-life-concept_19827280.htm#query=gym%20girl&position=34&from_view=search&track=ais&uuid=4fb50ac2-e213-4014-a271-f1a0827577ed">Image by master1305</a> on Freepik
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>
@@ -48,9 +57,6 @@ function Footer() {
             </li>
             <li className={style.item}>
             <a className={style.reference} href='https://github.com/YahyaNashar22'>github</a>
-            </li>
-            <li className={style.item}>
-            <a className={style.reference} href="https://www.freepik.com/free-photo/3d-render-dumbbells-set-realistic-detailed-close-up-view-isolated-sport-element-fitness-dumbbell-design_20623508.htm#query=fitness%20background&position=14&from_view=keyword&track=ais&uuid=89b0e55e-8aec-4a9e-a9fc-65bf44d7a66b">Image by Rochak Shukla</a> on Freepik
             </li>
           </ul>
       </aside>
