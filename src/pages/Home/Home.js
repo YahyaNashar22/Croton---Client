@@ -14,7 +14,7 @@ function Home() {
   const header = useRef(null);
   useEffect(() => {
     const typed = new Typed(header.current, {
-      strings: ['A Healthy <span style="color:var(--accent-green)">Body</style>','Sustains a Healthy <span style="color:var(--accent-green)">Mind</span>', '<span style="color:var(--accent-green)">Mens Sana in Corpore Sano</span>'],
+      strings: ['A Healthy <span style="color:var(--accent-green); background-color:transparent">Body</style>','Sustains a Healthy <span style="color:var(--accent-green); background-color:transparent">Mind</span>', '<span style="color:var(--accent-green); background-color:transparent">Mens Sana in Corpore Sano</span>'],
       typeSpeed: 50,
       loop:true,
       loopCount: Infinity,

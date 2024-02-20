@@ -33,3 +33,8 @@ export const userStore = create((set)=>({
   user:{},
   setUser: (data)=>set(()=>({user: data}))
 }))
+
+export const clickSoundStore = create((set)=>({
+  playSound:false,
+  setPlaySound:()=>set(state=>({playSound:!state.playSound}))
+}))

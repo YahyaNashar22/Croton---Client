@@ -1,0 +1,45 @@
+.wrapper, .inp, .icon{
+    background-color: transparent;
+}
+.wrapper{
+    width: 20rem;
+    height: 100px;  
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inp{
+    height: 50px;
+    width: 100%;
+    padding-left: 50px;
+    border-radius: 16px;
+    cursor: url('../../assets/cursors/txt.png'), auto !important;
+    outline: none;
+}
+.maleColors{
+    border: 1px solid var(--navy);
+    color:var(--navy);
+}
+.femaleColors{
+    border: 1px solid var(--pink);
+    color:var(--pink);
+}
+.maleColors:focus{
+    border: 1px solid var(--navy);
+    box-shadow: 1px 1px 5px var(--navy);
+}
+.femaleColors:focus{
+    border: 1px solid var(--pink);
+    box-shadow: 1px 1px 5px var(--pink);
+
+}
+.inp::placeholder{
+    font-style: italic;
+    color: var(--white);
+}
+.icon{
+    position: absolute;
+    left: 1rem;
+}

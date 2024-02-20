@@ -1,0 +1,43 @@
+.wrapper, .img, .header, .container{
+    background-color: transparent;
+}
+.container{
+    width: 400px;
+    height: 300px;
+    margin: 0 60px;
+}
+.container.maleColors{
+    border: 2px solid var(--grey);
+    box-shadow: 5px 5px 10px var(--grey);
+}
+.container.femaleColors{
+    border: 2px solid var(--grey);
+    box-shadow: 5px 5px 10px var(--grey);
+
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 160px;
+    overflow-y: scroll;
+}
+.wrapper::-webkit-scrollbar{
+    display: none;
+}
+.img{
+    border-radius: 16px;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+    transition: 0.5s ease;
+    padding: 10px;
+}
+.img:hover{
+    scale:1.05
+}
+.header{
+    color: var(--accent-black);
+    text-align: center;
+    font-style: italic;
+    padding: 10px 0;
+}

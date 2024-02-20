@@ -6,6 +6,7 @@ import omar from "../../assets/images/omar.png"
 import burger from "../../assets/icons/burger.svg"
 import x from "../../assets/icons/x.svg"
 import axios from 'axios'
+import { changeColor } from '../../utils/gender'
 
 
 function NavBar() {
@@ -32,6 +33,7 @@ function NavBar() {
 
   const {open,openClose} = menuStore();
   const {user, setUser} = userStore();
+  const colors = changeColor(user.gender)
 
   const logoutHandler = () =>{
     axios.get(`${process.env.REACT_APP_BACK_END_URL}users/logout`).then(res=>{
@@ -41,7 +43,10 @@ function NavBar() {
   }
   return (
     <>
-    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={location.pathname==='/body' || location.pathname==='/mind'?style.disappear:style.wrapper}>
+    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={
+      `${location.pathname==='/body' || location.pathname==='/mind'?style.disappear:style.wrapper}
+      ${location.pathname==='/'?style.wrapper:style[colors]}`
+      }>
       <aside className={style.left} onClick={()=>navigate('/')}>
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
       </aside>
@@ -64,7 +69,8 @@ function NavBar() {
       </aside>
     </nav>
     {/* Mobile View */}
-    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={style.mobileWrapper}>
+    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={
+      `${style.mobileWrapper}`}>
       <aside className={style.left} onClick={()=>navigate('/')}>
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
       </aside>

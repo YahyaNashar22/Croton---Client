@@ -1,3 +1,6 @@
+.wrapper, .disappear, .left, .middle, .right, .profilePic, .logo, .links, .signout, .activeLinks, .mobileWrapper, .mobileList, .burger, .menu, .close{
+    background-color: transparent;
+}
 .wrapper{
     height: 150px;
     width: 100%;
@@ -40,7 +43,7 @@
 .links, .signout, .activeLinks{
     text-decoration: none;
     padding: 10px;
-    color: var(--black);
+    color: var(--green);
     cursor: url('../../assets/cursors/hand.png'), auto !important;
     font-size: 20px;
     position: relative;
@@ -80,6 +83,37 @@
 .signout:hover{
     color: var(--white);
     background-color: var(--green);
+}
+
+/* different colors */
+
+.maleColors>.middle>.links, .femaleColors>.right>.signout, .femaleColors>.middle>.activeLinks{
+    color: var(--navy);
+}
+.femaleColors>.middle>.links, .femaleColors>.right>.signout, .femaleColors>.middle>.activeLinks{
+    color: var(--pink);
+}
+.maleColors>.middle>.links::before, .activeLinks::before{
+    border-bottom-color: var(--navy);
+}
+.femaleColors>.middle>.links::before, .activeLinks::before{
+    border-bottom-color: var(--pink);
+}
+.maleColors>.right>.signout{
+    border-color: var(--navy);
+    color: var(--navy);
+}
+.maleColors>.right>.signout:hover{
+    background-color: var(--navy);
+    color: var(--white);
+}
+.femaleColors>.right>.signout{
+    border-color: var(--pink);
+    color: var(--pink);
+}
+.femaleColors>.right>.signout:hover{
+    background-color: var(--pink);
+    color: var(--white);
 }
 
 /* Mobile View */

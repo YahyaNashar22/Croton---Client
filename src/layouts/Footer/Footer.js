@@ -29,6 +29,15 @@ function Footer() {
             <li className={style.item} >
                 Desk Model <a className={style.reference} href='https://www.blendswap.com/blend/28232'>blendswap.com</a> by pinidumelan
             </li>
+            <li className={style.item}>
+            Sound Effect from <a className={style.reference} href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=72231">Pixabay</a>
+            </li>
+            <li className={style.item}>
+            <a className={style.reference} href="https://www.freepik.com/free-photo/dumbbells-floor-gym-ai-generative_41368279.htm#query=fitness%20background&position=19&from_view=search&track=ais&uuid=64334f99-644a-45bf-bc81-d44bbe48018c">Image by chandlervid85</a> on Freepik
+            </li>
+            <li className={style.item}>
+            <a className={style.reference} href="https://www.freepik.com/free-ai-image/international-day-education-scene-with-fantasy-style_94193009.htm#query=library&position=16&from_view=search&track=sph&uuid=6f34f319-c95a-46e6-a74d-ade443742998">Image by freepik</a>
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>
@@ -39,6 +48,9 @@ function Footer() {
             </li>
             <li className={style.item}>
             <a className={style.reference} href='https://github.com/YahyaNashar22'>github</a>
+            </li>
+            <li className={style.item}>
+            <a className={style.reference} href="https://www.freepik.com/free-photo/3d-render-dumbbells-set-realistic-detailed-close-up-view-isolated-sport-element-fitness-dumbbell-design_20623508.htm#query=fitness%20background&position=14&from_view=keyword&track=ais&uuid=89b0e55e-8aec-4a9e-a9fc-65bf44d7a66b">Image by Rochak Shukla</a> on Freepik
             </li>
           </ul>
       </aside>

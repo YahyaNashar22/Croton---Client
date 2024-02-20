@@ -7,9 +7,18 @@
     width: 100%;
 }
 .header{
-    color: var(--black);
+    color: var(--white);
     padding-top: 200px;
     padding-left:200px;
     font-size: 48px;
     align-self: flex-start;
+    background-color: transparent;
+}
+.maleColors{
+    background-image: url('../../assets/images/dumbells.jpg');
+    background-size: cover;
+}
+.femaleColors{
+    background-image: url('../../assets/images/girlDumbell.jpg');
+    background-size: cover;
 }

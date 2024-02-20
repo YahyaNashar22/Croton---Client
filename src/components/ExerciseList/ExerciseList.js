@@ -8,6 +8,7 @@ import { changeColor } from '../../utils/gender'
 import { userStore } from '../../store'
 
 function ExerciseList({searchResult}) {
+
     const {user} = userStore();
     const colors = changeColor(user.gender);
 
@@ -15,7 +16,7 @@ function ExerciseList({searchResult}) {
         queryKey: ['exerciseData'],
         queryFn: () =>
           axios.get(`${process.env.REACT_APP_BACK_END_URL}exercises/getall`).then((res) =>
-           {return res.data.exercises}
+           {return(res.data.exercises)}
           ),
       })
     
@@ -31,9 +32,9 @@ function ExerciseList({searchResult}) {
             </Link>
             )
         }):
-        data && data.map((exercise)=>{
+        data && data.map((exercise, key)=>{
           return(
-            <Link to={`/singleexercise/${exercise._id}`} className={`${style.item} ${style[colors]}`}>
+            <Link key={key} to={`/singleexercise/${exercise._id}`} className={`${style.item} ${style[colors]}`}>
               {exercise.name}
             </Link>
             )
