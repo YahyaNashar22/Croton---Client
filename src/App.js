@@ -22,6 +22,7 @@ function App() {
     try{
         const userData = await axios.get(`${process.env.REACT_APP_BACK_END_URL}users/oneuser`);
         if(userData){
+          console.log(userData.data)
           setUser(userData.data)
       }
     }catch(err){

@@ -29,13 +29,13 @@ function TrainingPlanCard() {
                 return (
                     <div key={key} className={`${style.item} ${style[colors]}`}>
                         <p className={style.content}>
-                        {plan.name} <br />
+                        <span className={style.subContent}>{plan.name}</span> <br />
                         {plan.focus} <br />
                         {plan.nbOfExercises} exercises <br/>
                         <span className={style.clock}>
                             <img className={style.clockImg} src={clock} alt='clock' height={24} width={24}  />
                         </span>{plan.duration} mins.</p>
-                        <Link to={`${process.env.REACT_APP_BACK_END_URL}trainingplans/getone/:${plan._id}`} className={`${style.startbtn} ${style[colors]}`}>Start</Link>
+                        <Link to={`/singletrainingplan/${plan._id}`} className={`${style.startbtn} ${style[colors]}`}>Start</Link>
                     </div>
                 )
             })

@@ -9,14 +9,18 @@ export const userCredentialsStore = create((set)=>({
     fullname:null,
     email:null,
     password:null,
-    phoneNumber:null,
+    phoneNumber:0,
     profilePicture:null,
     photoURL:null,
-    age:null,
-    height:null,
-    weight:null,
+    age:0,
+    height:0,
+    weight:0,
     role:"user",
     gender:null,
+    favPlans:[],
+    favRecipes:[],
+    favBooks:[],
+    exerciseHistory:[]
 }))
 
 export const passwordStore = create((set)=>({

@@ -53,7 +53,7 @@ function AppRoutes() {
                 <LazyTrainingPlan />
               </React.Suspense>
             }/>
-            <Route path='/trainingplans/getone/:id' element={
+            <Route path='/singletrainingplan/:id' element={
               <React.Suspense fallback={<Loading />}>
                 <LazySingleTrainingPlan />
               </React.Suspense>

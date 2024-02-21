@@ -1,4 +1,4 @@
-.wrapper, .item, .content, .clock, .startbtn, .clockImg{
+.wrapper, .item, .content, .clock, .startbtn, .clockImg, .subContent{
     background-color: transparent;
 }
 .wrapper{
@@ -19,9 +19,14 @@
     font-style: italic;
     transition: 0.5s ease;
 }
-.content{
+.content, .subContent{
     text-align: center;
     line-height: 40px;
+}
+.content{
+    font-size: 16px;
+}
+.subContent{
     font-size: 24px;
 }
 .clock{

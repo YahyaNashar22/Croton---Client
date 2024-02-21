@@ -18,7 +18,6 @@ function SignupForm() {
   fullname,
   email,
   password,
-  phoneNumber,
   profilePicture} = userCredentialsStore();
   
   const handleChange = (e)=>{
@@ -43,10 +42,10 @@ const handleSubmit = (e)=>{
     fullname,
     email,
     password,
-    phoneNumber,
     profilePicture,
-    role:"user"}).then((res)=>{
-    setUser(res.data.token.data);
+    role:"user"
+  }).then((res)=>{
+    setUser(res.data.userToken.data);
     setPending();
     navigate('/');
   }).catch((err)=>{console.log(err.message)});

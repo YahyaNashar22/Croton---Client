@@ -5,6 +5,9 @@
     transition: 0.5s ease;
     box-shadow: 2px 5px 0px var(--green);
     border: none;
+    position: absolute;
+    top: 14rem;
+    right: 15rem;
 }
 .favorite:active{
     transform: translateY(5px);

@@ -34,6 +34,7 @@ const handleSubmit = (e)=>{
 e.preventDefault();
 setPending();
  axios.post(`${process.env.REACT_APP_BACK_END_URL}users/login`, {email:email, password:password}).then((res)=>{
+  console.log(res)
   setUser(res.data.token.data);
   setPending();
   navigate('/');
@@ -51,9 +52,9 @@ const handleGoogle = () => {
           `${process.env.REACT_APP_BACK_END_URL}users/gsign`,
           {
             fullname: data.user.displayName,
-            email: data.user.email,
-            photoURL: data.user.photoURL,
-            role: "user",
+                email: data.user.email,
+                photoURL: data.user.photoURL,
+                role: "user",
           }
         )
         .then((res) => {
