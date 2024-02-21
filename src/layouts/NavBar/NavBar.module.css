@@ -34,6 +34,7 @@
 }
 .profilePic{
     border-radius: 100px ;
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
 }
 .logo{
     border-radius: 100px;

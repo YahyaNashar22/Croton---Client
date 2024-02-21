@@ -1,0 +1,90 @@
+.wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    column-gap: 60px;
+}
+.left{
+    height:600px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    row-gap: 50px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+.left.maleColors{
+    background-color: var(--navy);
+}
+.left.femaleColors{
+    background: url('../../assets/images/girlDumbell1.jpg');
+    background-size: cover;
+}
+.profilePic{
+    border-radius: 100px;
+}
+.info, .name{
+    background-color: transparent;
+    line-height: 40px;
+    font-size: 26px;
+}
+.name{
+    font-style: italic;
+}
+.icon, .iconimg{
+    background-color: transparent;
+}
+.icon{
+    padding-right: 10px;
+}
+.right{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.block,.bookblock{
+    border-radius: 16px;
+    height: 200px;
+    width: 100%;
+    padding: 10px;
+}
+.bookblock{
+    height: 300px;
+}
+.block.maleColors, .bookblock.maleColors{
+    border: 2px solid var(--navy);
+    box-shadow: 5px 5px 5px var(--navy);
+}
+.block.femaleColors, .bookblock.femaleColors{
+    border: 2px solid var(--pink);
+    box-shadow: 5px 5px 5px var(--pink);
+}
+.blockHeader.maleColors{
+    background-color: var(--navy);
+}
+.blockHeader.femaleColors{
+    background-color: var(--pink);
+}
+.blockHeader{
+    width:100%;
+    color: var(--white);
+    font-size: 20px;
+    border-radius: 16px;
+    text-align: center;
+}
+.plansRecipes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    column-gap: 60px;
+}

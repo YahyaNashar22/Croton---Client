@@ -9,10 +9,11 @@ const LazyMind = React.lazy(()=>import('../pages/MindPage/MindPage.js'));
 const LazyNutritionCenter = React.lazy(()=>import('../pages/NutritionCenterPage/NutritionCenterPage.js'));
 const LazyLogin = React.lazy(()=>import('../pages/LoginPage/LoginPage.js'));
 const LazySignup = React.lazy(()=>import('../pages/SignupPage/SignupPage.js'));
-const LazyExercise = React.lazy(()=>import('../pages/ExercisePage/ExercisePage.js'))
-const LazySingleExercise = React.lazy(()=>import('../pages/SingleExercisePage/SingleExercisePage.js'))
-const LazyTrainingPlan = React.lazy(()=>import("../pages/TrainingPlanPage/TrainingPlanPage.js"))
-const LazySingleTrainingPlan = React.lazy(()=>import("../pages/SingleTrainingPlanPage/SingleTrainingPlanPage.js"))
+const LazyProfile = React.lazy(()=>import('../pages/ProfilePage/ProfilePage.js'));
+const LazyExercise = React.lazy(()=>import('../pages/ExercisePage/ExercisePage.js'));
+const LazySingleExercise = React.lazy(()=>import('../pages/SingleExercisePage/SingleExercisePage.js'));
+const LazyTrainingPlan = React.lazy(()=>import("../pages/TrainingPlanPage/TrainingPlanPage.js"));
+const LazySingleTrainingPlan = React.lazy(()=>import("../pages/SingleTrainingPlanPage/SingleTrainingPlanPage.js"));
 
 function AppRoutes() {
   return (
@@ -56,6 +57,11 @@ function AppRoutes() {
             <Route path='/singletrainingplan/:id' element={
               <React.Suspense fallback={<Loading />}>
                 <LazySingleTrainingPlan />
+              </React.Suspense>
+            }/>
+            <Route path='/profile' element={
+              <React.Suspense fallback={<Loading />}>
+                <LazyProfile />
               </React.Suspense>
             }/>
         </Route>
