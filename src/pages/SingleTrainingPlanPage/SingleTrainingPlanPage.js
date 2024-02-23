@@ -29,7 +29,7 @@ function SingleTrainingPlanPage() {
     <section className={style.wrapper}>
        {foundPlan?
        <>
-       <FavoriteButton id={foundPlan._id} />
+       <FavoriteButton plan={foundPlan} />
        <div className={style.upper}>
       <h1 className={style.header}>
         {foundPlan.name}

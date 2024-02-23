@@ -21,7 +21,6 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.22.0",
     "react-scripts": "5.0.1",
-    "react-slick": "^0.30.2",
     "react-three-fiber": "^6.0.13",
     "three": "^0.161.0",
     "typed.js": "^2.1.0",

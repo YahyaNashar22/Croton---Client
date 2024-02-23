@@ -90,7 +90,6 @@ function ProfilePage() {
                 <div className={style.favoriteContainer}>
                     {
                         user.favRecipes? user.favRecipes.map((recipe, key)=>{
-                            console.log(user)
                             return(
                                 <Link key={key} to={`/singletrainingplan/${recipe._id}`} className={style.favLink}>
                                     <p className={style.recipeName}>{recipe.name}</p>

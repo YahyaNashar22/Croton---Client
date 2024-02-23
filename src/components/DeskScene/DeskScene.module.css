@@ -1,7 +1,7 @@
 .wrapper{
     position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 .htmlContainer, .link, .homelink, .header{
     background-color: transparent;
@@ -22,11 +22,21 @@
 }
 .link:hover{
     font-size: 36px;
-    color: var(--green);
+}
+.link.maleColors:hover{
+    color: var(--navy);
+}
+.link.femaleColors:hover{
+    color: var(--pink);
 }
 .homelink{
-    color: var(--green);
     font-size: 26px;
+}
+.homelink.maleColors{
+    color: var(--navy);
+}
+.homelink.femaleColors{
+    color: var(--navy);
 }
 .homelink:hover{
     color: rgb(250, 37, 37);

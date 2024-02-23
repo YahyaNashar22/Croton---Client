@@ -6,32 +6,39 @@ import { clickSoundStore } from '../../store'
 import metalClick from "../../assets/sounds/metalClick.mp3"
 import axios from "axios"
 
-function FavoriteButton({id}) {
+function FavoriteButton({plan}) {
 
-  const [favorited, setFavorited]= useState(false);
+  const {user, setUser}=userStore();
 
-    const {user, setUser}=userStore();
+  const [favorited, setFavorited]= useState(Object.values(user.favPlans).some(item => item._id === plan._id));
+  
     let colors = changeColor(user.gender); 
     const {playSound, setPlaySound} = clickSoundStore();
    useEffect(()=>{
-    if(Object.keys(user).length>1 && user.favPlans.includes(id)){
+    if( Object.values(user.favPlans).some(item => item._id === plan._id)){
       setFavorited(true)
     }
     else{
       setFavorited(false)
     }
    },[user]) 
-
+   
+   
+    console.log(Object.values(user.favPlans).some(item => item._id === plan._id))
+    console.log(plan)
+    console.log(user.favPlans)
     const favHandler = () =>{
       if(favorited){
-        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/removefavplans`, {userID:user._id, planID:id}).then(res=>setUser(res.data.user)).catch(e=>e.message)
+        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/removefavplans`, {userID:user._id, planID:plan._id})
+        .then(res=>{setUser(res.data.user)})
+        .catch(e=>e.message)
       }
       else{
-        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/addtofavplans`, {userID:user._id, planID:id}).then(res=>setUser(res.data.user)).catch(e=>e.message)
+        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/addtofavplans`, {userID:user._id, planID:plan._id})
+        .then(res=>{setUser(res.data.user)})
+        .catch(e=>e.message)
       }
     }
-
-
 
   return (
     <>

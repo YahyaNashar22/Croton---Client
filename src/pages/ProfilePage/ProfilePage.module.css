@@ -20,7 +20,8 @@
     backdrop-filter: blur(10px);
 }
 .left.maleColors{
-    background-color: var(--navy);
+    background: url('../../assets/images/dumbells.jpg');
+    background-size: cover;
 }
 .left.femaleColors{
     background: url('../../assets/images/girlDumbell1.jpg');

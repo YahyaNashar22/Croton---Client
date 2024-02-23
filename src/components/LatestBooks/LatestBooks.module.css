@@ -1,0 +1,41 @@
+.wrapper{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+.covers{
+  border-radius: 16px;
+  position: absolute;
+}
+.next{
+  padding: 10px 20px;
+  bottom: 5rem;
+  position: absolute;
+  color: var(--white);
+  border: none;
+  border-radius: 16px;
+  cursor: url('../../assets/cursors/hand.png'), auto !important;
+  transition: 0.5s ease;
+}
+.next:active{
+  transform: translateY(5px);
+}
+.next.maleColors:active{
+  box-shadow: 0px 0px 0px var(--green);
+}
+.next.femaleColors:active{
+  box-shadow: 0px 0px 0px var(--green);
+}
+.next.maleColors{
+  background-color: var(--navy);
+  border: 1px solid var(--navy);
+  box-shadow: 5px 5px 0px var(--green);
+}
+.next.femaleColors{
+  background-color: var(--pink);
+  border: 1px solid var(--pink);
+  box-shadow: 5px 5px 0px var(--green);
+}
