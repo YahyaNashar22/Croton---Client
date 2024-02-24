@@ -1,3 +1,45 @@
 .wrapper{
-    height: 100vh;
+    height: 100%;
+}
+.sectionHeader{
+    text-align: center;
+}
+.filterContainer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.genreSelect, .searchBook{
+    padding: 10px 20px;
+    width: 30%;
+    border-radius: 16px;
+}
+.pagination{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    margin-bottom: 20px;
+}
+.paginationBtn{
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+    color: var(--white);
+    transition: 0.5s ease;
+    width: 100px;
+    border: none;
+}
+.paginationBtn:active{
+    transform: translateY(10);
+}
+.paginationBtn.maleColors{
+    background-color: var(--navy);
+}
+.paginationBtn.femaleColors{
+    background-color: var(--pink);
 }

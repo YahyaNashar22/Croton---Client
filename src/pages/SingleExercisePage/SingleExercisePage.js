@@ -30,12 +30,16 @@ function SingleExercisePage() {
   return (
     <section className={`${style.wrapper} ${style[colors]}`}>
         {foundExercise?
+        <div className={style.upperContainer}>
+          <h1 className={style.header}>
+            {foundExercise.name}
+          </h1>
         <div className={style.upper}>
        <img className={style.image} 
           src={`${process.env.REACT_APP_BACK_END_URL}${foundExercise.gif[index]}`} 
           alt='exercise' 
-          height={600} 
-          width={600} 
+          height={500} 
+          width={500} 
           loading='lazy' />
        <p className={style.content}>
             Name: <span className={style[colors]}>{foundExercise.name}</span><br/>
@@ -44,6 +48,7 @@ function SingleExercisePage() {
             Muscle Group: <span className={style[colors]}>{foundExercise.muscleGrp}</span><br/>
             Instructions:<br/> <span className={style[colors]}>{foundExercise.instructions}</span> 
        </p>
+       </div>
        </div>
        :
        <Loading />

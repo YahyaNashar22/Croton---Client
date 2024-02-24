@@ -27,7 +27,6 @@ function LatestBooks({colors}) {
   const handleNext = () => {
     setPositionIndexes((prevIndexes)=>{
       const updatedIndex = prevIndexes.map((prevIndex)=>(prevIndex + 1) % 10) // change the 3 to be equal to array length
-        console.log(updatedIndex)
       return updatedIndex
     })
   }
@@ -74,7 +73,7 @@ function LatestBooks({colors}) {
               transition={{duration:0.5}}
               height={600}
               width={400}
-              className={style.covers}
+              className={`${style.covers} ${style[colors]}`}
               />
 
           )

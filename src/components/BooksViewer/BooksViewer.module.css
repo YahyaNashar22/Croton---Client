@@ -1,0 +1,13 @@
+.wrapper{
+    height: 100%;
+    min-height: 600px;
+    min-width: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+    margin: 100px auto;
+}

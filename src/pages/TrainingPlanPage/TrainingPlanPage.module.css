@@ -1,6 +1,21 @@
-.wrapper{
+.container{
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.header{
+    color: var(--black);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-left:200px;
+    font-size: 48px;
+    align-self: flex-start;
+    background-color: transparent;
 }

@@ -15,6 +15,7 @@ const LazySingleExercise = React.lazy(()=>import('../pages/SingleExercisePage/Si
 const LazyTrainingPlan = React.lazy(()=>import("../pages/TrainingPlanPage/TrainingPlanPage.js"));
 const LazySingleTrainingPlan = React.lazy(()=>import("../pages/SingleTrainingPlanPage/SingleTrainingPlanPage.js"));
 const LazyBook = React.lazy(()=>import("../pages/BookPage/BookPage.js"))
+const LazySingleBook = React.lazy(()=>import("../pages/SingleBookPage/SingleBookPage.js"))
 
 function AppRoutes() {
   return (
@@ -68,6 +69,11 @@ function AppRoutes() {
             <Route path='/books' element={
               <React.Suspense fallback={<Loading />}>
                 <LazyBook />
+              </React.Suspense>
+            }/>
+            <Route path='/singlebook/:id' element={
+              <React.Suspense fallback={<Loading />}>
+                <LazySingleBook />
               </React.Suspense>
             }/>
         </Route>

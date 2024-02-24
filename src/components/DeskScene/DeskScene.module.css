@@ -1,3 +1,6 @@
+.wrapper .htmlContainer, .link, .homelink, .header{
+    background-color: transparent;
+}
 .wrapper{
     position: relative;
     height: 100vh;
@@ -11,10 +14,11 @@
 }
 .header{
     font-size: 40px;
+    color: var(--white);
 }
 .link, .homelink{
     text-decoration: none;
-    color: var(--black);
+    color: var(--white);
     font-size: 30px;
     cursor: url('../../assets/cursors/hand.png'), auto !important;
     line-height: 70px;
@@ -36,7 +40,7 @@
     color: var(--navy);
 }
 .homelink.femaleColors{
-    color: var(--navy);
+    color: var(--pink);
 }
 .homelink:hover{
     color: rgb(250, 37, 37);
