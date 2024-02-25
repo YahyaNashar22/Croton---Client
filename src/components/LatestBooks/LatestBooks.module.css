@@ -5,16 +5,50 @@
   justify-content: center;
   width: 100%;
   position: relative;
+  background-image: url('../../assets/images/library2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+}
+.header{
+  position: absolute;
+  font-size: 48px;
+  top: 30rem;
+  left: 5rem;
+  color: var(--white);
+  background-color: #0c0c0c80;
+  letter-spacing: 50px;
+  width: 600px;
+  text-align: center;
+  border-radius: 16px;
+  transform: rotate(-90deg);
+}
+.header2{
+  position: absolute;
+  font-size: 48px;
+  top: 30rem;
+  right: 5rem;
+  color: var(--white);
+  background-color: #0c0c0c80;
+  letter-spacing: 50px;
+  width: 600px;
+  text-align: center;
+  border-radius: 16px;
+  transform: rotate(90deg);
 }
 .covers{
   border-radius: 16px;
+  position: relative;
+  cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.link{
   position: absolute;
 }
 .covers.maleColors{
-  box-shadow: 5px 5px 100px var(--navy);
+  box-shadow: 0px 0px 10px var(--navy);
 }
 .covers.femaleColors{
-  box-shadow: 5px 5px 100px var(--pink);
+  box-shadow: 0px 0px 10px var(--pink);
 }
 .next{
   padding: 10px 20px;

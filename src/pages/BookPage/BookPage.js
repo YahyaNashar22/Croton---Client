@@ -8,8 +8,10 @@ import BooksViewer from '../../components/BooksViewer/BooksViewer'
 
 function BookPage() {
 
+  const [books, setBooks] = useState([])
   const [availableGenres, setAvailableGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState('all genres');
+  const [search, setSearch] =useState();
   const [page, setPage] = useState(1);
   const [ totalNB, setTotalNB]= useState()
 
@@ -18,28 +20,29 @@ function BookPage() {
           .then(res=>setAvailableGenres(res.data.payload))
           .catch(e=>console.log(e.message))
   }
-  const totalNumberOfBooks = () =>{
-    axios.get(`${process.env.REACT_APP_BACK_END_URL}books/gettotalnumber`)
-          .then(res=> setTotalNB(res.data.payload))
-          .catch(e=>e.message)
-  }
   const genreSetter = (e) =>{
     setSelectedGenre(e.target.value)
+  }
+  const searchSetter = (e) =>{
+    setSearch(e.target.value)
   }
 
   useEffect(()=>{
     availableGenreFetcher();
-    totalNumberOfBooks()
   },[])
   
   const {user} = userStore();
   const colors = changeColor(user.gender)
 
   return (
-    <section className={style.wrapper}>
+    <section className={style.wrapper}> 
         <LatestBooks colors={colors} />
         <h2 className={style.sectionHeader}>
-          Available books under {`${selectedGenre}`}
+          {!search?
+          `Available books under ${selectedGenre}`
+            :
+            `Available books under ${search}`
+        }
         </h2>
         <aside className={style.filterContainer}>
           <select className={style.genreSelect} value={selectedGenre} onChange={genreSetter}>
@@ -53,19 +56,25 @@ function BookPage() {
               
             }
           </select>
-          <input type='text' className={style.searchBook} placeholder='search for a book' />
+          <input type='text' className={style.searchBook} placeholder='search for a book' onChange={searchSetter} />
         </aside>
-        <BooksViewer page={page} selectedGenre={selectedGenre} totalNB={totalNB} setTotalNB={setTotalNB} />
+        <BooksViewer
+            page={page} 
+            selectedGenre={selectedGenre}
+            search={search} 
+            setTotalNB={setTotalNB} 
+            books={books} 
+            setBooks={setBooks} />
         <div className={style.pagination}>
           {
-            page===1 && page!==totalNB/10 &&
+            page===1 && totalNB>10 &&
             <button type='button' className={`${style.paginationBtn} ${style[colors]}`} onClick={()=>setPage(page+1)}>Next</button>
           }
           {
             page>1 &&
           <button type='button' className={`${style.paginationBtn} ${style[colors]}`} onClick={()=>setPage(page-1)}>Previous</button>
           }
-          <p>{page}/{totalNB/10}</p>
+          <p>{page} / {totalNB/10}</p>
         </div>
     </section>
   )

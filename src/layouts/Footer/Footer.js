@@ -47,6 +47,9 @@ function Footer() {
             <li className={style.item}>
             <a className={style.reference} href="https://www.freepik.com/free-photo/female-athlete-training-hard-gym-fitness-healthy-life-concept_19827280.htm#query=gym%20girl&position=34&from_view=search&track=ais&uuid=4fb50ac2-e213-4014-a271-f1a0827577ed">Image by master1305</a> on Freepik
             </li>
+            <li className={style.item}>
+            <a className={style.reference} href="https://www.freepik.com/free-vector/cartoon-bookstore-interior-with-books-shelves_48197216.htm#fromView=search&page=1&position=51&uuid=55456640-2a24-44e5-8339-c06dc576b7f9">Image by upklyak on Freepik</a>
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>
