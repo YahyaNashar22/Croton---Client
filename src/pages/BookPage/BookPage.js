@@ -5,6 +5,7 @@ import {changeColor} from "../../utils/gender"
 import {userStore} from "../../store"
 import axios from "axios"
 import BooksViewer from '../../components/BooksViewer/BooksViewer'
+import magnifier from "../../assets/icons/search.svg"
 
 function BookPage() {
 
@@ -56,13 +57,18 @@ function BookPage() {
               
             }
           </select>
+          <div className={style.searchWrapper}>
           <input type='text' className={style.searchBook} placeholder='search for a book' onChange={searchSetter} />
+          <img src={magnifier} height={25} width={25} alt='search' className={style.searchIcon} />
+          </div>
         </aside>
         <BooksViewer
-            page={page} 
+            page={page}
+            setPage={setPage} 
             selectedGenre={selectedGenre}
             search={search} 
             setTotalNB={setTotalNB} 
+            totalNB={totalNB}
             books={books} 
             setBooks={setBooks} />
         <div className={style.pagination}>

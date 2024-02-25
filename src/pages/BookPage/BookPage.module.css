@@ -12,9 +12,26 @@
     justify-content: space-around;
     align-items: center;
 }
-.genreSelect, .searchBook{
-    padding: 10px 20px;
+.searchWrapper{
     width: 30%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    position: relative;
+}
+.searchBook{
+    width: 100%;
+    padding: 10px 50px;
+}
+.searchIcon{
+    position: absolute;
+    left: 1rem;
+}   
+.genreSelect{
+    width: 30%;
+    padding: 10px 20px;
+}
+.genreSelect, .searchBook{
     border-radius: 16px;
 }
 .pagination{
