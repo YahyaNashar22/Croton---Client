@@ -1,21 +1,21 @@
 import React,{useState, useEffect} from 'react'
-import style from "./FavoriteButton.module.css"
+import style from "./BookFavoriteButton.module.css"
 import { changeColor } from '../../utils/gender'
 import { userStore } from '../../store'
 import { clickSoundStore } from '../../store'
 import metalClick from "../../assets/sounds/metalClick.mp3"
 import axios from "axios"
 
-function FavoriteButton({plan}) {
+function BookFavButton({book}) {
 
   const {user, setUser}=userStore();
 
-  const [favorited, setFavorited]= useState(Object.values(user.favPlans).some(item => item._id === plan._id));
+  const [favorited, setFavorited]= useState(Object.values(user.favBooks).some(item => item._id === book._id));
   
     let colors = changeColor(user.gender); 
     const {playSound, setPlaySound} = clickSoundStore();
    useEffect(()=>{
-    if( Object.values(user.favPlans).some(item => item._id === plan._id)){
+    if( Object.values(user.favBooks).some(item => item._id === book._id)){
       setFavorited(true)
     }
     else{
@@ -27,12 +27,12 @@ function FavoriteButton({plan}) {
    
     const favHandler = () =>{
       if(favorited){
-        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/removefavplans`, {userID:user._id, planID:plan._id})
+        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/removefavbooks`, {userID:user._id, bookID:book._id})
         .then(res=>{setUser(res.data.user)})
         .catch(e=>e.message)
       }
       else{
-        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/addtofavplans`, {userID:user._id, planID:plan._id})
+        axios.post(`${process.env.REACT_APP_BACK_END_URL}users/addtofavbooks`, {userID:user._id, bookID:book._id})
         .then(res=>{setUser(res.data.user)})
         .catch(e=>e.message)
       }
@@ -52,4 +52,4 @@ function FavoriteButton({plan}) {
   )
 }
 
-export default FavoriteButton
+export default BookFavButton

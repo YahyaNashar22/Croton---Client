@@ -58,3 +58,24 @@
 .femaleColors{
     color: var(--grey);
 }
+.back{
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 16px;
+    align-self: flex-end;
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
+    transition: 0.5s ease;
+    width: 100px;
+    align-self: flex-start;
+}
+.back.maleColors{
+    background-color: var(--navy);
+}
+.back.femaleColors{
+    background-color: var(--pink);
+}
+.back:hover{
+    background-color: red;
+}

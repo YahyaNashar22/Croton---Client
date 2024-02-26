@@ -80,7 +80,7 @@ function BookPage() {
             page>1 &&
           <button type='button' className={`${style.paginationBtn} ${style[colors]}`} onClick={()=>setPage(page-1)}>Previous</button>
           }
-          <p>{page} / {totalNB/10}</p>
+          <p>{page} / {Math.ceil(totalNB/10)}</p>
         </div>
     </section>
   )

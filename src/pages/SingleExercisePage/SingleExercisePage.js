@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import style from "./SingleExercisePage.module.css"
 import axios from 'axios'
 import Loading from "../../components/Loading/Loading"
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { changeColor, changePicture } from '../../utils/gender'
 import { userStore } from '../../store'
 import SimilarExercises from '../../components/SimilarExercises/SimilarExercises'
@@ -48,6 +48,7 @@ function SingleExercisePage() {
             Muscle Group: <span className={style[colors]}>{foundExercise.muscleGrp}</span><br/>
             Instructions:<br/> <span className={style[colors]}>{foundExercise.instructions}</span> 
        </p>
+          <Link to='/exercises' className={`${style.back} ${style[colors]}`}>Go Back</Link>
        </div>
        </div>
        :

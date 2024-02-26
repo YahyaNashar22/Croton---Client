@@ -19,7 +19,9 @@ function SingleTrainingPlanPage() {
   const [foundPlan, setFoundPlan] = useState(null)
 
   const fetchPlan = () => {
-    axios.get(`${process.env.REACT_APP_BACK_END_URL}trainingplans/getone/${id}`).then(res=>setFoundPlan(res.data.plan)).catch(e=>{console.log(e.message)})
+    axios.get(`${process.env.REACT_APP_BACK_END_URL}trainingplans/getone/${id}`)
+          .then(res=>setFoundPlan(res.data.plan))
+          .catch(e=>{console.log(e.message)})
   }
   useEffect(()=>{
     fetchPlan()
@@ -42,6 +44,7 @@ function SingleTrainingPlanPage() {
         <p className={style.description}>
           {foundPlan.description}
         </p>
+        <Link to='/trainingplans' className={`${style.back} ${style[colors]}`}>Go Back</Link>
       </div>
       <ul className={style.lower}>
         {foundPlan.exerciseObject.map((exercise, key)=>{

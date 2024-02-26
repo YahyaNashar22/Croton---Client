@@ -64,3 +64,26 @@
     justify-content: center;
     border-radius: 16px;
 }
+.back{
+    text-align: center;
+    line-height: 50px;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 16px;
+    align-self: flex-end;
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
+    transition: 0.5s ease;
+    width: 100px;
+    align-self: flex-start;
+}
+.back.maleColors{
+    background-color: var(--navy);
+}
+.back.femaleColors{
+    background-color: var(--pink);
+}
+.back:hover{
+    background-color: red;
+}
