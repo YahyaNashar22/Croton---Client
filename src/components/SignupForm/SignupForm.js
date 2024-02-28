@@ -24,7 +24,9 @@ function SignupForm() {
     const {name, value} = e.target;
     userCredentialsStore.setState({[name]:value})
   }
-
+  const handleChangeImage = (e)=>{
+    userCredentialsStore.setState({profilePicture:e.target.files[0]})
+  }
   //password visibility handling
 const {visible, setVisible} = passwordStore();
 
@@ -42,12 +44,14 @@ const handleSubmit = (e)=>{
     fullname,
     email,
     password,
-    profilePicture,
+    image:profilePicture,
     role:"user"
-  }).then((res)=>{
+},{  headers: {
+  'Content-Type': 'multipart/form-data'
+}}).then((res)=>{
     setUser(res.data.userToken.data);
     setPending();
-    navigate('/');
+    navigate('/extrainfo');
   }).catch((err)=>{console.log(err.message)});
   }
 
@@ -76,7 +80,7 @@ const handleSubmit = (e)=>{
                 setUser({});
                 setPending();
               }
-              navigate("/");
+              navigate("/extrainfo");
             });
         })
         .catch((err) => {
@@ -120,7 +124,7 @@ const handleSubmit = (e)=>{
           <label htmlFor='profilepicture' className={style.label}>
           Upload your picture
         </label>
-          <input id='profilepicture' className={style.inp} type='file' name='profilePicture' onChange={handleChange} />
+          <input id='profilepicture' className={style.inp} type='file' name='profilePicture' onChange={handleChangeImage} />
         {!pending?
         <button type='button' onClick={handleSubmit} className={style.submit}>Sign up</button>:
         <button disabled className={style.submitdisabled}>Signing you up</button>

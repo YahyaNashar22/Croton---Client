@@ -53,6 +53,9 @@ function Footer() {
             <li className={style.item}>
             <a className={style.reference} href="https://www.freepik.com/free-photo/world-heart-day-concept-with-healthy-food_9472185.htm#fromView=search&page=1&position=24&uuid=2565b1fb-6841-48bd-b55e-350c36bc73f8">Image by freepik</a>
             </li>
+            <li className={style.item}>
+              <a href='https://www.pexels.com/video/a-video-illustration-of-a-human-deoxyribonucleic-acid-3191420/' className={style.reference}>Video by Pressmaster:</a>
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>

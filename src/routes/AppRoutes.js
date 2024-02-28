@@ -9,6 +9,7 @@ const LazyMind = React.lazy(()=>import('../pages/MindPage/MindPage.js'));
 const LazyNutritionCenter = React.lazy(()=>import('../pages/NutritionCenterPage/NutritionCenterPage.js'));
 const LazyLogin = React.lazy(()=>import('../pages/LoginPage/LoginPage.js'));
 const LazySignup = React.lazy(()=>import('../pages/SignupPage/SignupPage.js'));
+const LazyExtraInfo = React.lazy(()=>import("../pages/ExtraInfoPage/ExtraInfoPage.js"))
 const LazyProfile = React.lazy(()=>import('../pages/ProfilePage/ProfilePage.js'));
 const LazyExercise = React.lazy(()=>import('../pages/ExercisePage/ExercisePage.js'));
 const LazySingleExercise = React.lazy(()=>import('../pages/SingleExercisePage/SingleExercisePage.js'));
@@ -85,6 +86,11 @@ function AppRoutes() {
             <Route path='/signup' element={
               <React.Suspense fallback={<Loading />}>
                 <LazySignup />
+              </React.Suspense>
+            }/>
+            <Route path='/extrainfo' element={
+              <React.Suspense fallback={<Loading />}>
+                <LazyExtraInfo />
               </React.Suspense>
             }/>
     </Routes>

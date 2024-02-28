@@ -16,7 +16,7 @@ export const userCredentialsStore = create((set)=>({
     height:0,
     weight:0,
     role:"user",
-    gender:null,
+    gender:"male",
     favPlans:[],
     favRecipes:[],
     favBooks:[],

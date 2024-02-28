@@ -1,0 +1,103 @@
+.container, .inpContainer, .inp{
+    background-color: transparent;
+}
+.inpContainer{
+    position: relative;
+    width: 100%; 
+    /* HERE MY GGGGGGGGGGGGG */
+}
+.wrapper, .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+.submit{
+    background-color: rgba(255, 255, 255, 0);
+}
+.wrapper{
+    border-radius: 16px;
+    width: 700px;
+    height: 600px;
+    padding: 20px;
+    justify-content: center;
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.container{
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+.header{
+    font-size: 36px;
+    line-height: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+.label{
+    width: 300px;
+    opacity: 0.6;
+    color: var(--white);
+    background-color: transparent;
+}
+.inp{
+    padding: 10px 0;
+    color: var(--white);
+    transition: 0.5s ease;
+    border: none;
+    border-bottom: 1px solid var(--green);
+    width: 100% !important;
+    cursor: url('../../assets/cursors/txt.png'), auto !important;
+    outline: none;
+    margin: 10px 0;
+}
+.inp::placeholder{
+    color: var(--white);
+    opacity: 0.5;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+.inp:focus::placeholder{
+    opacity: 0;
+}
+.genderSelector{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 2px;
+    cursor: url('../../assets/cursors/hand.png'),auto !important;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--green);
+    border-radius: 8px;
+    outline: none;
+    border: none;
+}
+.option{
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.submit, .submitdisabled{
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 16px;
+    transition: 0.5s ease;
+    border: 1px solid var(--green);
+    margin-top: 20px;
+    color: var(--white);
+}
+.submit{
+    cursor: url('../../assets/cursors/hand.png'), auto !important;
+}
+.submitdisabled{
+    background-color: var(--green);
+}
+.submit:hover{
+    background-color: var(--green);
+    color: var(--white);
+}
+.submit:active{
+    transform: translateY(8px);
+}
