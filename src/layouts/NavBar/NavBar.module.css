@@ -85,6 +85,9 @@
     color: var(--white);
     background-color: var(--green);
 }
+.scrolled{
+    background-color: #0c0c0c50;
+}
 
 /* different colors */
 

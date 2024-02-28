@@ -12,11 +12,17 @@ body{
   scroll-behavior: smooth;
   cursor: url('./assets/cursors/cursor.png'), auto !important;
   font-family: 'poppins', sans-serif ;
+  
 }
 *::selection{
   color: var(--green);
   background-color: black;
   -webkit-font-smoothing: antialiased;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 :root{

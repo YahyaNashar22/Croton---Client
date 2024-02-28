@@ -14,6 +14,27 @@ function NavBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
+
+  // calculate the scroll if it exceeds the 100vh
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > window.innerHeight) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
@@ -27,7 +48,7 @@ function NavBar() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [prevScrollPos]);
-
+////////////////////////////
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -43,9 +64,11 @@ function NavBar() {
   }
   return (
     <>
-    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={
+    <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}}
+     className={
       `${location.pathname==='/body' || location.pathname==='/mind'?style.disappear:style.wrapper}
-      ${location.pathname==='/'?style.wrapper:style[colors]}`
+      ${location.pathname==='/'?style.wrapper:style[colors]}
+      ${scrolled ? style.scrolled : ""}`
       }>
       <aside className={style.left} onClick={()=>navigate('/')}>
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
@@ -53,7 +76,7 @@ function NavBar() {
       <aside className={style.middle}>
           <Link to="/body" className={location.pathname==="/body" ? style.activeLinks : style.links}>Body</Link>
           <Link to="/mind" className={location.pathname==="/mind" ? style.activeLinks : style.links}>Mind</Link>
-          <Link to="/nutrition-center" className={location.pathname==="/nutrition-center" ? style.activeLinks : style.links}>Nutrition Center</Link>
+          <Link to="/nutrition-center" className={style.links}>Nutrition Center</Link>
       </aside>
       <aside className={style.right}>
           { user.email ?

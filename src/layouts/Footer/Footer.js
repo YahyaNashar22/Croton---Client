@@ -50,6 +50,9 @@ function Footer() {
             <li className={style.item}>
             <a className={style.reference} href="https://www.freepik.com/free-vector/cartoon-bookstore-interior-with-books-shelves_48197216.htm#fromView=search&page=1&position=51&uuid=55456640-2a24-44e5-8339-c06dc576b7f9">Image by upklyak on Freepik</a>
             </li>
+            <li className={style.item}>
+            <a className={style.reference} href="https://www.freepik.com/free-photo/world-heart-day-concept-with-healthy-food_9472185.htm#fromView=search&page=1&position=24&uuid=2565b1fb-6841-48bd-b55e-350c36bc73f8">Image by freepik</a>
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>

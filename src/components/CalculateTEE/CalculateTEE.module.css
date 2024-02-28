@@ -1,0 +1,140 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.header{
+    align-self: flex-start;
+    margin: 20px;
+    font-size: 36px;
+    color: var(--green);
+}
+.content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 100px;
+}
+.left{
+    padding: 50px;
+    border: 2px solid var(--green);
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 40%;
+    height: 300px;
+    background-color: var(--green);
+}
+.formula{
+    padding: 20px;
+    border:2px solid var(--green);
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 16px;
+    font-size: 24px;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    margin: 100px auto;
+}
+.description{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 24px;
+}
+.constant{
+    text-align: start;
+    color: var(--white);
+    padding-right: 100px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border: 2px solid var(--green);
+    padding: 50px;
+    border-radius: 16px;
+    height: 300px;
+}
+.calculator{
+    padding: 10px 20px;
+    border-radius:16px;
+    font-size: 20px;
+    width: 100px;
+    text-align: center;
+    cursor: url("../../assets/cursors/txt.png"), auto !important;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--green);
+    background-color: var(--white);
+}
+.calculator:focus::placeholder{
+    opacity: 0;
+}
+.multiply{
+    border: none;
+    box-shadow: 0px 5px 0px var(--black);
+    background-color: var(--green);
+    border-radius: 16px;
+    padding: 10px 20px;
+    margin-left: 20px;
+    color: var(--white);
+    font-size: 20px;
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
+    transition: 0.5s ease;
+}
+.multiply:active{
+    box-shadow: 0px 0px 0px var(--black);
+    transform: translateY(7px);
+}
+.output{
+    font-size: 24px;
+    text-align: center;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 16px;
+    width:80%;
+    padding: 10px;
+    transition: 0.5s ease;
+}
+.output:hover{
+    scale: 1.05;
+}
+.information{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.infoBlock{
+    padding: 20px;
+    transition: 0.5s ease;
+}
+.infoBlock:hover{
+    transform: translateY(-10px);
+}
+.subHeader{
+    align-self: flex-start;
+    color: var(--white);
+    background-color: var(--green);
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+}
+.informationContent{
+    border: 2px solid var(--green);
+    padding: 10px;
+    font-size: 20px;
+}
+.green{
+    color: var(--green);
+}
