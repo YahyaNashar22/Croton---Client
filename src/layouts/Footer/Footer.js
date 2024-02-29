@@ -56,6 +56,9 @@ function Footer() {
             <li className={style.item}>
               <a href='https://www.pexels.com/video/a-video-illustration-of-a-human-deoxyribonucleic-acid-3191420/' className={style.reference}>Video by Pressmaster:</a>
             </li>
+            <li className={style.item}>
+              <a href='https://www.pexels.com/video/an-animation-of-a-squared-tunnel-2759477/' className={style.reference}>Video by Tunnel motions</a>
+            </li>
           </ul>
       </aside>
       <aside className={style.right}>

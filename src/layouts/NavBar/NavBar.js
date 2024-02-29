@@ -74,14 +74,14 @@ function NavBar() {
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
       </aside>
       <aside className={style.middle}>
-          <Link to="/body" className={location.pathname==="/body" ? style.activeLinks : style.links}>Body</Link>
-          <Link to="/mind" className={location.pathname==="/mind" ? style.activeLinks : style.links}>Mind</Link>
-          <Link to="/nutrition-center" className={style.links}>Nutrition Center</Link>
+          <Link to="/body" className={`${location.pathname==="/body" ? style.activeLinks : style.links} ${location.pathname==='/nutrition-center' ?  style.nutritionLinks : ""}`}>Body</Link>
+          <Link to="/mind" className={`${location.pathname==="/mind" ? style.activeLinks : style.links} ${location.pathname==='/nutrition-center' ?  style.nutritionLinks : ""}`}>Mind</Link>
+          <Link to="/nutrition-center" className={`${style.links} ${location.pathname==='/nutrition-center' ?  style.nutritionLinks : ""}`}>Nutrition Center</Link>
       </aside>
       <aside className={style.right}>
           { user.email ?
           <>
-          <button type='submit' onClick={logoutHandler} className={style.signout}>sign out</button>
+          <button type='submit' onClick={logoutHandler} className={`${style.signout} ${location.pathname==='/nutrition-center' ?  style.nutritionLinks : ""}`}>sign out</button>
           <Link to="/profile" className={style.profilePic}>
             <img className={style.profilePic} src={user.profilePic? `${process.env.REACT_APP_BACK_END_URL}${user.profilePic}`:user.photoURL} alt="Profile" width={'50px'} height={'50px'}/>
             </Link>

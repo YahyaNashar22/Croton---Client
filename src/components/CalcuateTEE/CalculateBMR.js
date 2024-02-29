@@ -70,7 +70,7 @@ const  calculateBMR= ()=>{
         </article>
         <div className={style.calculatorContainer}>
           <select className={style.genderSelector} name='gender' onChange={handleChange}>
-            <option className={style.option} value='' selected>Select Gender</option>
+            <option className={style.option} defaultValue=''>Select Gender</option>
             <option className={style.option} value={'male'}>Male</option>
             <option className={style.option} value={'female'}>Female</option>
           </select>

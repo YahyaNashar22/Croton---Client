@@ -89,7 +89,7 @@
 }
 .example, .example2{
     bottom: 7rem;
-    font-size: 36px;
+    font-size: 2vw;
     color: var(--green);
     padding: 10px;
     border-radius: 8px;
@@ -103,7 +103,7 @@
     right: 0;
 }
 .table{
-    width: 50%;
+    width: 30%;
     min-width: 600px;
     min-height: 300px;
     padding: 20px;

@@ -34,7 +34,6 @@ const handleSubmit = (e)=>{
 e.preventDefault();
 setPending();
  axios.post(`${process.env.REACT_APP_BACK_END_URL}users/login`, {email:email, password:password}).then((res)=>{
-  console.log(res)
   setUser(res.data.token.data);
   setPending();
   navigate('/');

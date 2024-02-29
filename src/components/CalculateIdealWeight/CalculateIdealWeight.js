@@ -98,7 +98,7 @@ function CalculateIdealWeight() {
         </div>
         <div className={style.calculatorContainer}>
           <select className={style.genderSelector} name='gender' onChange={handleChange}>
-            <option className={style.option} value='' selected>Select gender</option>
+            <option className={style.option} defaultValue=''>Select gender</option>
             <option className={style.option} value={"male"}>Man</option>
             <option className={style.option} value={"female"}>Woman</option>
           </select>

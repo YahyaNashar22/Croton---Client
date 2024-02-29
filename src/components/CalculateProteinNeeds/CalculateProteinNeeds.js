@@ -64,7 +64,7 @@ function CalculateProteinNeeds() {
         </p>
         <div className={style.calculatorContainer}>
           <select className={style.groupSelector} name='group' onChange={handleChange}>
-            <option className={style.option} value='' selected>Select group</option>
+            <option className={style.option} defaultValue=''>Select group</option>
             <option className={style.option} value={0.8}>Most Adults</option>
             <option className={style.option} value={1.3}>Non Vegeterian Endurance Athletes</option>
             <option className={style.option} value={1.6}>Non Vegeterian Strength Athletes</option>
