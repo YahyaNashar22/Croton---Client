@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import NavFooterOutlet from "./NavFooterOutlet.js";
 import Loading from "../components/Loading/Loading.js";
-import { userStore } from "../store.js";
 import ProtectedRoute from "./ProtectedRoute.js";
 
 const LazyHome = React.lazy(() => import("../pages/Home/Home.js"));
@@ -37,10 +36,9 @@ const LazyBook = React.lazy(() => import("../pages/BookPage/BookPage.js"));
 const LazySingleBook = React.lazy(() =>
   import("../pages/SingleBookPage/SingleBookPage.js")
 );
+const LazyGamePage = React.lazy(()=>import("../pages/GamePage/GamePage.js"))
 
 function AppRoutes() {
-
-  const { user } = userStore();
   
   return (
     <Routes>
@@ -131,6 +129,14 @@ function AppRoutes() {
           element={
             <React.Suspense fallback={<Loading />}>
               <LazySingleBook />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/games"
+          element={
+            <React.Suspense fallback={<Loading />}>
+              <LazyGamePage />
             </React.Suspense>
           }
         />

@@ -28,8 +28,8 @@
     "zustand": "^4.5.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "start",
+    "build": "npm i",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
