@@ -23,7 +23,15 @@ function FavoriteButton({plan}) {
     }
    },[user]) 
 
-   console.log(user)
+   const refreshUser = () =>{
+    axios.get(`${process.env.REACT_APP_BACK_END_URL}users/oneuser`)
+          .then(res=>setUser(res.data))
+          .catch(e=>console.log(e.message))
+   }
+
+   useEffect(()=>{
+    refreshUser()
+   },[user])
    
     const favHandler = () =>{
       if(favorited){

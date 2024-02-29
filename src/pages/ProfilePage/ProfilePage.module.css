@@ -89,3 +89,21 @@
     width: 100%;
     column-gap: 60px;
 }
+.favLink{
+    text-decoration: none;
+    color: var(--black);
+}
+.trainingPlanName, .bookCover{
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
+    transition: 0.5s ease;
+}
+.trainingPlanName:hover, .bookCover:hover{
+    scale: 1.02;
+}
+.favoriteContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    overflow-x: scroll;
+}

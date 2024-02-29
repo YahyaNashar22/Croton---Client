@@ -1,9 +1,8 @@
-import React,{useEffect, useState} from 'react'
+import React from 'react'
 import style from "./ProfilePage.module.css"
 import { userStore } from '../../store'
 import { changeColor, changePicture } from '../../utils/gender'
 import { Link } from "react-router-dom"
-import axios from "axios"
 import pinkRuler from "../../assets/icons/pinkRuler.svg"
 import pinkWeight from "../../assets/icons/pinkWeight.svg"
 import pinkPhone from "../../assets/icons/pinkPhone.svg"
@@ -12,9 +11,6 @@ import navyRuler from "../../assets/icons/navyRuler.svg"
 import navyWeight from "../../assets/icons/navyWeight.svg"
 import navyPhone from "../../assets/icons/navyPhone.svg"
 import navyProfile from "../../assets/icons/navyProfile.svg"
-import Loading from '../../components/Loading/Loading'
-
-
 
 function ProfilePage() {
     const {user} = userStore();
@@ -56,7 +52,7 @@ function ProfilePage() {
                         user.favBooks ? user.favBooks.map((book, key)=>{
                             return(
                                 <Link key={key} to={`/singleBook/${book._id}`} className={style.favLink}>
-                                    <img src={`${process.env.REACT_APP_BACK_END_URL}${book.cover}`} alt='item' height={200} width={100} loading='lazy' />
+                                    <img className={style.bookCover} src={`${process.env.REACT_APP_BACK_END_URL}${book.cover}`} alt='item' height={200} width={100} loading='lazy' />
                                 </Link>
                             )
                         }):
@@ -72,7 +68,6 @@ function ProfilePage() {
                 <div className={style.favoriteContainer}>
                     {
                         user.favPlans? user.favPlans.map((plan, key)=>{
-                            console.log(user)
                             return(
                                 <Link key={key} to={`/singletrainingplan/${plan._id}`} className={style.favLink}>
                                     <p className={style.trainingPlanName}>{plan.name}</p>
