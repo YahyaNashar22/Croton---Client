@@ -100,7 +100,7 @@ function ExtraInfoForm() {
             Gender
           </label>
             <select required id="gender" name="gender" onChange={handleChange} className={style.genderSelector}>
-                <option value={'male'} className={style.option} selected>Male</option>
+                <option defaultValue={'male'} className={style.option}>Male</option>
                 <option value={'female'} className={style.option}>Female</option>
             </select>
         </div>

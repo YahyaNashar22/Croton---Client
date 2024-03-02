@@ -46,12 +46,12 @@
     width: 100%;
     display: flex;
     align-items: flex-start;
-    font-size: 24px;
+    font-size: 100%;
 }
 .constant{
     text-align: start;
     color: var(--white);
-    padding-right: 100px;
+    padding-right: 10%;
 }
 .right{
     display: flex;
@@ -137,4 +137,21 @@
 }
 .green{
     color: var(--green);
+}
+
+@media (max-width:1018px){
+    .content{
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+    }
+    .left, .right, .formula, .description{
+        width: 100%;
+    }
+    .information{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 }

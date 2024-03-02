@@ -9,13 +9,14 @@
 .header{
     color: var(--black);
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     padding-left:200px;
     font-size: 48px;
     align-self: flex-start;
     background-color: transparent;
 }
 .bookDataContainer{
+    margin-top: 100px;
     width: 80%;
     display: flex;
     justify-content: space-around;
@@ -38,6 +39,7 @@
 .downloadLink, .back{
     line-height: 70px;
     text-decoration: none;
+    text-align: center;
     padding: 10px 20px;
     color: var(--white);
     border-radius: 16px;
@@ -60,4 +62,21 @@
 }
 .back:hover{
     background-color: red;
+}
+
+@media(max-width:1150px){
+    .bookDataContainer{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 100px;
+    }
+    .header{
+        padding-left: 30px;
+        align-self: center;
+    }
+    .downloadLink, .back{
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+    }
 }

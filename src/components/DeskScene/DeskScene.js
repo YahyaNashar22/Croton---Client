@@ -11,6 +11,23 @@ function DeskScene() {
   const {user}= userStore();
   const colors = changeColor(user.gender)
 
+  //handling screen width
+  const [mobile, setMobile] = useState(false)
+
+  useEffect(()=>{
+    const handleResize = () =>{
+      if(window.innerWidth<=768){
+        setMobile(true)
+      }else{
+        setMobile(false)
+      }
+    }
+    handleResize();
+    window.addEventListener( 'resize', handleResize );
+    return () =>{
+      window.removeEventListener('resize',handleResize);
+    }
+  },[])
   // Handling HTML anchor tags to show after intro animation
   const [showList, setShowList] = useState(false);
 
@@ -28,6 +45,19 @@ function DeskScene() {
     <Canvas camera={{position:[0,50,35], fov:42  }} style={{backgroundColor:"black"}} >
     <fog attach='fog' args={['#0c0c0c', 15, 50]} />
     <DeskMain />
+    {
+      mobile?
+      <>
+    <group position={[-20,2,0]} rotation={[-0.02,1.6,0]}>  
+    <Html className={showList?style.htmlContainer:style.none} >
+      <a className={`${style.link} ${style[colors]}`} href='/books'>Read Books</a><br/>
+      <a className={`${style.link} ${style[colors]}`} href='/games'>Play Games</a><br/>
+      <a className={`${style.homelink} ${style[colors]}`} href='/'>-Back-</a>
+    </Html>
+    </group>
+      </>
+      :
+      <>
     <group position={[5,5,14]} rotation={[-0.02,1.6,0]}>  
     <Html className={showList?style.htmlContainer:style.none} >
       <h1 className={style.header}> what seems to be on your mind</h1>
@@ -36,6 +66,9 @@ function DeskScene() {
       <a className={`${style.homelink} ${style[colors]}`} href='/'>-Back-</a>
     </Html>
     </group>
+      </>
+
+    }
     </Canvas>
     </section>
   )

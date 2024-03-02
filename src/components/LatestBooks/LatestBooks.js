@@ -3,7 +3,6 @@ import style from "./LatestBooks.module.css";
 import axios from "axios";
 import Loading from "../Loading/Loading"
 import {motion} from 'framer-motion'
-import { Link } from "react-router-dom";
 
 function LatestBooks({colors}) {
 
@@ -71,7 +70,7 @@ function LatestBooks({colors}) {
         {latestBooks?
         latestBooks.map((book, key)=>{
           return(
-            <motion.a href={`/singlebook/${book._id}`} 
+            <motion.a key={key} href={`/singlebook/${book._id}`} 
               className={style.link}
             >
             <motion.img

@@ -31,4 +31,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    width: 100%;
+}
+
+@media (max-width:925px){
+    .lists{
+        flex-direction: column;
+    }
 }

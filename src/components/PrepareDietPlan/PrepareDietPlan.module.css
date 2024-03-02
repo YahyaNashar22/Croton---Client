@@ -103,8 +103,7 @@
     right: 0;
 }
 .table{
-    width: 30%;
-    min-width: 600px;
+    width: 100%;
     min-height: 300px;
     padding: 20px;
     border-collapse: collapse;
@@ -121,4 +120,28 @@
 }
 .tableContent{
     text-align: center;
+}
+
+@media ( max-width:1160px){
+    .example{
+        transform: rotate(90deg);
+    }
+    .example2{
+        transform: rotate(-90deg);
+    }
+}
+@media (max-width:896px){
+    .example, .example2{
+        top:55%
+    }
+    .example{
+        transform: rotate(360deg);
+
+    }
+    .example2{
+        transform: rotate(360deg);
+    }
+    .macrosList{
+        width: 100%;
+    }
 }

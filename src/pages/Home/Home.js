@@ -55,7 +55,7 @@ function Home() {
               It was the home of great athletes and philossophers alike.<br/>
               Hence the symbolic meaning that you can become better by learning and training.
           </motion.p>
-          <img src={coupleTraining} height={'600px'} width={'600px'} loading='lazy' alt='couple training' />
+          <img src={coupleTraining} height={'400px'} width={'400px'} loading='lazy' alt='couple training' />
         </article>
       </section>
       <section className={style.sections}>
@@ -63,7 +63,7 @@ function Home() {
           What We Offer
         </h2>
         <article className={style.content}>
-        <img src={puzzlePiece} height={'600px'} width={'600px'} loading='lazy' alt='puzzle piece' />
+        <img src={puzzlePiece} height={'400px'} width={'400px'} loading='lazy' alt='puzzle piece' />
         <motion.div className={style.text}
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
@@ -98,7 +98,7 @@ function Home() {
           Our Aim
         </h2>
         <article className={style.content}>
-        <img src={boyOverBook} height={'500px'} width={'500px'} loading='lazy' alt='boy over books' />
+        <img src={boyOverBook} height={'400px'} width={'400px'} loading='lazy' alt='boy over books' />
             <motion.p className={`${style.text} ${style.scrollable}`}
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
@@ -112,7 +112,7 @@ function Home() {
             Our aim is to help build a better society with a better life style, most people focus on either building their strength , or their mind productivity. Only few really focus on the importance of builfing both sides for a healthier lifestyle and a more productive society.<br/>
             The idea is originated from the old greek civilization , <i>-Hence the naming-</i>, Where almost all the population was skilled in various fields like philosophy, strengh, medicine, and many more. People back then were both warriors and great scholars at the same time, the criterias that made a very strong civilization that left its findings till the present day.
             </motion.p>
-        <img src={girlFlyingBook} height={'500px'} width={'500px'} loading='lazy' alt='girl flying on book' />
+        <img src={girlFlyingBook} height={'400px'} width={'400px'} loading='lazy' alt='girl flying on book' />
         </article>
       </section>
       <section className={style.sections}>

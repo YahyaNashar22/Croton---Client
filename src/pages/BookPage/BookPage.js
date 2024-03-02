@@ -47,7 +47,7 @@ function BookPage() {
         </h2>
         <aside className={style.filterContainer}>
           <select className={style.genreSelect} value={selectedGenre} onChange={genreSetter}>
-            <option  value='all genres' selected>All Genres</option>
+            <option  defaultValue='all genres'>All Genres</option>
             {
               availableGenres && availableGenres.map((genre,key)=>{
                 return(

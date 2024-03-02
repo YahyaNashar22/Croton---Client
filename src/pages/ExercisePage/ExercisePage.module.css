@@ -22,3 +22,10 @@
     background-image: url('../../assets/images/girlDumbell1.jpg');
     background-size: cover;
 }
+
+
+@media(max-width:480px){
+    .header{
+        padding-left: 30px;
+    }
+}

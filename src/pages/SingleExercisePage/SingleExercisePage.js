@@ -38,8 +38,8 @@ function SingleExercisePage() {
        <img className={style.image} 
           src={`${process.env.REACT_APP_BACK_END_URL}${foundExercise.gif[index]}`} 
           alt='exercise' 
-          height={500} 
-          width={500} 
+          height={400} 
+          width={400} 
           loading='lazy' />
        <p className={style.content}>
             Name: <span className={style[colors]}>{foundExercise.name}</span><br/>

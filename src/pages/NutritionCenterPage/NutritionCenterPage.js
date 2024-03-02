@@ -2,7 +2,7 @@ import React from 'react'
 import style from "./NutritionCenterPage.module.css"
 import NutritionCenterHero from '../../components/NutritionCenterHero/NutritionCenterHero'
 import CalculateTEE from '../../components/CalculateTEE/CalculateTEE'
-import CalculateBMR from '../../components/CalcuateTEE/CalculateBMR'
+import CalculateBMR from '../../components/CalcuateBMR/CalculateBMR'
 import KnowAF from '../../components/KnowAF/KnowAF'
 import PrepareDietPlan from '../../components/PrepareDietPlan/PrepareDietPlan'
 import CarbsProtLip from '../../components/CarbsProtLip/CarbsProtLip'

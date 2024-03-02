@@ -1,10 +1,11 @@
 .wrapper{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin: auto;
+    margin-bottom: 20px;
     column-gap: 60px;
 }
 .left{
@@ -54,7 +55,7 @@
 }
 .block,.bookblock{
     border-radius: 16px;
-    height: 200px;
+    height: 100%;
     width: 100%;
     padding: 10px;
 }
@@ -81,6 +82,7 @@
     font-size: 20px;
     border-radius: 16px;
     text-align: center;
+    padding: 5px;
 }
 .plansRecipes{
     display: flex;
@@ -106,4 +108,15 @@
     justify-content: space-around;
     height: 100%;
     overflow-x: scroll;
+}
+
+@media(max-width:600px){
+    .wrapper{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .left{
+        width: 100%;
+        border-radius: 0px;
+    }
 }

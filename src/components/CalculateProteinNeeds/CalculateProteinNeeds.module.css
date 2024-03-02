@@ -15,7 +15,6 @@
 }
 .table{
     width: 80%;
-    min-width: 600px;
     min-height: 300px;
     padding: 20px;
     margin: 10px auto;
@@ -102,7 +101,7 @@
 .result{
     position: absolute;
     bottom: 1rem;
-    left: 6.5rem;
+    left:10%;
     font-size: 16px;
     text-align: center;
     background-color: var(--green);
@@ -114,4 +113,14 @@
 }
 .result:hover{
     scale: 1.05;
+}
+
+@media (max-width:925px){
+    .calculatorContainer{
+        flex-direction: column;
+        width: 100%;
+    }
+    .table{
+        width: 100%;
+    }
 }

@@ -11,6 +11,27 @@ function GymScene() {
   const {user} = userStore();
   const colors = changeColor(user.gender);
 
+  // handle screen resize
+  const [mobile, setMobile]=useState(false);
+
+  useEffect(()=>{
+    const handleResize = () => {
+      if(window.innerWidth<=768){
+        setMobile(true)
+      }else{
+        setMobile(false)
+      }
+    }
+
+    handleResize();
+
+    window.addEventListener('resize',handleResize);
+
+    return ()=>{
+      window.removeEventListener( 'resize', handleResize );
+    }
+  },[])
+
   // Handling HTML anchor tags to show after intro animation
   const [showList, setShowList] = useState(false);
 
@@ -27,14 +48,25 @@ function GymScene() {
     <Canvas camera={{position:[0,50,35], fov:42  }} >
     <fog attach='fog' args={['#0c0c0c', 15, 50]} />
     <GymMain />
-    <group position={[2,5,-11]} rotation={[0,3.5,0]}>
-    <Html className={showList?style.htmlContainer:style.none} >
-      <h1 className={style.header}>What do you want to do today ?</h1>
-      <a className={`${style.link} ${style[colors]}`} href='/exercises'>Check Exercises</a><br/>
-      <a className={`${style.link} ${style[colors]}`} href='/trainingplans'>Check Training Plans</a><br/>
-      <a className={`${style.homelink} ${style[colors]}`} href='/'>-Back-</a>
-    </Html>
-    </group>
+    {
+      mobile ? 
+      <group position={[4,0,0]} rotation={[0,3.5,0]}>
+      <Html className={showList?style.htmlContainer:style.none} >
+        <a className={`${style.link} ${style[colors]}`} href='/exercises'>Check Exercises</a><br/>
+        <a className={`${style.link} ${style[colors]}`} href='/trainingplans'>Check Training Plans</a><br/>
+        <a className={`${style.homelink} ${style[colors]}`} href='/'>-Back-</a>
+      </Html>
+      </group>
+      :
+      <group position={[2,5,-11]} rotation={[0,3.5,0]}>
+      <Html className={showList?style.htmlContainer:style.none} >
+        <h1 className={style.header}>What do you want to do today ?</h1>
+        <a className={`${style.link} ${style[colors]}`} href='/exercises'>Check Exercises</a><br/>
+        <a className={`${style.link} ${style[colors]}`} href='/trainingplans'>Check Training Plans</a><br/>
+        <a className={`${style.homelink} ${style[colors]}`} href='/'>-Back-</a>
+      </Html>
+      </group>
+    }
     </Canvas>
     </section>
   )

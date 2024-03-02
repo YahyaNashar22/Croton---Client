@@ -35,7 +35,7 @@
     padding: 100px;
     border-radius: 16px;
     position: relative;
-}
+}   
 .genderSelector{
     padding: 10px;
     cursor: url('../../assets/cursors/hand.png'),auto !important;
@@ -81,7 +81,7 @@
 .result{
     position: absolute;
     bottom: 1rem;
-    left: 6.5rem;
+    left: 10%;
     font-size: 16px;
     text-align: center;
     background-color: var(--green);
@@ -93,4 +93,16 @@
 }
 .result:hover{
     scale: 1.05;
+}
+
+@media (max-width:1012px){
+    .calculatorContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

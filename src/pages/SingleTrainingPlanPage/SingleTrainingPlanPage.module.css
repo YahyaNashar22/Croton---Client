@@ -41,7 +41,7 @@
 }
 .exercise{
     width: 100%;
-    height: 100px;
+    height: 100%;
     border-radius: 16px;
     transition: 0.5s ease;
     display: flex;
@@ -86,4 +86,26 @@
 }
 .back:hover{
     background-color: red;
+}
+
+@media (max-width:600px){
+    .wrapper{
+        justify-content: center;
+        align-items: center;
+    }
+    .header{
+        padding-left: 30px;
+        align-self: center;
+    }
+    .focus{
+        padding-left: 30px;
+        align-self: center;
+    }
+    .middle{
+        padding-left: 40px;
+        align-self: center;
+    }
+    .exercise{
+        flex-direction: column;
+    }
 }

@@ -8,7 +8,7 @@
     background-size: cover;
 }
 .wrapper{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     row-gap: 50px;
@@ -78,4 +78,19 @@
 }
 .back:hover{
     background-color: red;
+}
+
+@media (max-width:1035px){
+    .wrapper{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:900px){
+    .upper{
+        flex-direction: column;
+    }
+    .content{
+        width: 100%;
+    }
 }

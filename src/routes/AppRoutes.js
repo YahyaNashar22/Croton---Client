@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import NavFooterOutlet from "./NavFooterOutlet.js";
 import Loading from "../components/Loading/Loading.js";
 import ProtectedRoute from "./ProtectedRoute.js";
+import NotFound from "../components/NotFound/NotFound.js";
 
 const LazyHome = React.lazy(() => import("../pages/Home/Home.js"));
 const LazyBody = React.lazy(() => import("../pages/BodyPage/BodyPage.js"));
@@ -163,6 +164,14 @@ function AppRoutes() {
         element={
           <React.Suspense fallback={<Loading />}>
             <LazyExtraInfo />
+          </React.Suspense>
+        }
+      />
+      <Route
+        path="/*"
+        element={
+          <React.Suspense fallback={<Loading />}>
+            <NotFound />
           </React.Suspense>
         }
       />

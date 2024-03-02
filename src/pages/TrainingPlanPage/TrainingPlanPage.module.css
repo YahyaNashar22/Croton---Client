@@ -19,3 +19,13 @@
     align-self: flex-start;
     background-color: transparent;
 }
+
+@media(max-width:480px){
+    .header{
+        padding-left: 30px;
+    }
+    .wrapper{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
