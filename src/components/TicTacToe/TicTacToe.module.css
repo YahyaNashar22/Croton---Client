@@ -1,0 +1,32 @@
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.box{
+    height: 10rem;
+    width: 10rem;
+    margin:0 10px 10px 0;
+    background-color: var(--black);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game{
+    display: flex;
+    flex-direction: column;
+}
+.board{
+    display: flex;
+}
+.title{
+    text-align: center;
+    color: #f8f8f8;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}

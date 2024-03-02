@@ -1,0 +1,72 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+.linkToDifferentProject{
+    color: var(--white);
+    text-align: center;
+    font-size: 64px;
+}
+.link{
+    text-align: center;
+    text-decoration: none;
+    color: var(--green);
+    font-size: 48px;
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
+    transition: 1s ease;
+}
+.link:hover{
+    border: 2px solid var(--green);
+    border-radius: 16px;
+    background-color: var(--green);
+    color: var(--white);
+    transform: translateY(10px);
+    scale: 1.1;
+    box-shadow: 10px 10px var(--black);
+    padding: 10px 20px;
+}
+.games{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    row-gap: 20px;
+}
+.gameButton, .gameButtonClose{
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
+    border: none;
+    color: var(--white);
+    transition: 0.5s ease;
+}
+.gameButton{
+    background-color: transparent;
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 16px;
+    font-size: 36px;
+}
+.gameButtonClose{
+    cursor: url("../../assets/cursors/hand.png"), auto !important;
+    background-color: rgb(174, 0, 0);
+    align-self: flex-end;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+.gameButton:hover, .gameButtonClose:hover{
+    box-shadow: 0px 10px var(--black);
+    transform: translateY(-10px);
+}
+.gameButton:active, .gameButtonClose:active{
+    box-shadow: 0px 0px var(--black);
+    transform: translateY(10px);
+}

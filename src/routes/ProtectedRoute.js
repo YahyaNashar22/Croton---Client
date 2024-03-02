@@ -5,7 +5,6 @@ import { Navigate, Outlet } from "react-router-dom";
 function ProtectedRoute() {
 
     const {user} = userStore(); 
-    console.log(user.gender)
 
     if(Object.keys(user).length<1){
         return <Navigate to='/login' replace />

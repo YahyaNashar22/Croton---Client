@@ -6,7 +6,15 @@
     align-items: center;
     justify-content: center;
 }
-.video{
-    position: fixed;
-    z-index: -1;
+.header{
+    font-size: 64px;
+    color: var(--white);
+    text-shadow: 10px 10px 10px var(--black);
+}
+.subHeader{
+    color: var(--white);
+    font-size: 48px;
+    width: 80%;
+    line-height: 100px;
+    text-shadow: 5px 5px 10px purple;
 }
