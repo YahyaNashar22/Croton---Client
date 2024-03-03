@@ -6,6 +6,8 @@ import Loading from '../../components/Loading/Loading'
 import BookFavButton from "../../components/BookFavButton/BookFavButton"
 import { changeColor } from '../../utils/gender'
 import { userStore } from '../../store'
+import { Helmet } from 'react-helmet-async'
+
 
 function SingleBookPage() {
 
@@ -26,6 +28,20 @@ function SingleBookPage() {
 
 
   return (
+    <>
+    <Helmet>
+    <title>{bookData && bookData.title}</title>
+        <meta
+          name="description"
+          content={`information about ${bookData && bookData.title}, read online, download`}
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content={`${bookData && bookData.title}`} />
+        <meta
+          property="og:description"
+          content={`information about ${bookData && bookData.title}, read online, download`}
+        />
+    </Helmet>
     <section className={style.wrapper}>
         {
           bookData?
@@ -73,6 +89,7 @@ function SingleBookPage() {
           <Loading />
         }
     </section>
+    </>
   )
 }
 

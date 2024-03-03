@@ -7,6 +7,7 @@ import coupleTraining from "../../assets/images/coupleTrain.svg"
 import puzzlePiece from "../../assets/images/puzzlePiece.svg"
 import girlFlyingBook from "../../assets/images/girlFlyingBook.svg"
 import boyOverBook from "../../assets/images/boyOverBook.svg"
+import { Helmet } from 'react-helmet-async';
 
 function Home() {
 
@@ -27,7 +28,20 @@ function Home() {
   }, []);
 
   return (
-
+    <>
+    <Helmet>
+    <title>Croton - Home</title>
+        <meta
+          name="description"
+          content="Explore Croton, Your Gateway To a Healthy Life"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Croton - Home" />
+        <meta
+          property="og:description"
+          content="Explore Croton, Your Gateway To a Healthy Life"
+        />
+    </Helmet>
     <main className={style.wrapper}>
       <section className={style.hero}>
         <span ref={header} className={style.header}></span>
@@ -129,6 +143,7 @@ function Home() {
         </article>
       </section>
     </main>
+    </>
   )
 }
 

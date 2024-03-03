@@ -17,7 +17,7 @@ function CalculateTEE() {
         })
     }
     const calculate = () =>{
-        const result = parseInt(formData.BMR) * parseInt(formData.AF);
+        const result = parseFloat(formData.BMR) * parseFloat(formData.AF);
         setFormData({
             ...formData,
             TEE: result
@@ -50,7 +50,7 @@ function CalculateTEE() {
                 </div>
                 {
                     formData.TEE?
-                    <p className={style.output} >The Result is: {formData.TEE} Kcal/day</p>
+                    <p className={style.output} >The Result is: {formData.TEE.toFixed(2)} Kcal/day</p>
                     :
                     <p className={style.output}>Input your data above</p>
                 }

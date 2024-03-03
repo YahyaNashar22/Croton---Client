@@ -6,6 +6,8 @@ import { useParams, Link } from 'react-router-dom';
 import { changeColor, changePicture } from '../../utils/gender'
 import { userStore } from '../../store'
 import SimilarExercises from '../../components/SimilarExercises/SimilarExercises'
+import { Helmet } from 'react-helmet-async'
+
 
 function SingleExercisePage() {
 
@@ -28,6 +30,20 @@ function SingleExercisePage() {
   },[id])
 
   return (
+    <>
+        <Helmet>
+    <title>{foundExercise && foundExercise.name}</title>
+        <meta
+          name="description"
+          content={`information about ${foundExercise && foundExercise.name}`}
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content={`${foundExercise && foundExercise.name}`} />
+        <meta
+          property="og:description"
+          content={`information about ${foundExercise && foundExercise.name}`}
+        />
+    </Helmet>
     <section className={`${style.wrapper} ${style[colors]}`}>
         {foundExercise?
         <div className={style.upperContainer}>
@@ -56,6 +72,7 @@ function SingleExercisePage() {
        }
         <SimilarExercises index={index} colors={colors} />
     </section>
+    </>
   )
 }
 

@@ -11,12 +11,28 @@ import navyRuler from "../../assets/icons/navyRuler.svg"
 import navyWeight from "../../assets/icons/navyWeight.svg"
 import navyPhone from "../../assets/icons/navyPhone.svg"
 import navyProfile from "../../assets/icons/navyProfile.svg"
+import { Helmet } from 'react-helmet-async'
+
 
 function ProfilePage() {
     const {user} = userStore();
     const colors = changeColor(user.gender)
     const index = changePicture(user.gender)
   return (
+    <>
+    <Helmet>
+    <title>Profile</title>
+        <meta
+          name="description"
+          content="Information about the user's profile"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Profile" />
+        <meta
+          property="og:description"
+          content="Information about the user's profile"
+        />
+    </Helmet>
     <section className={style.wrapper}>
         <aside className={`${style.left} ${style[colors]}`}>
             <img src={`${process.env.REACT_APP_BACK_END_URL}${user.profilePic?user.profilePic:user.photoURL}`} className={style.profilePic} height={200} width={200} loading='lazy' alt='profile' />
@@ -98,6 +114,7 @@ function ProfilePage() {
             </div>
         </aside>
     </section>
+    </>
   )
 }
 

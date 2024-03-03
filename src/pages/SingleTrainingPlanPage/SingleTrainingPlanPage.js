@@ -7,7 +7,7 @@ import clock from "../../assets/icons/blackClock.svg"
 import { userStore } from '../../store'
 import { changeColor, changePicture } from '../../utils/gender'
 import FavoriteButton from "../../components/FavoriteButton/FavoriteButton"
-
+import { Helmet } from 'react-helmet-async'
 
 function SingleTrainingPlanPage() {
 
@@ -28,6 +28,20 @@ function SingleTrainingPlanPage() {
   },[id])
 
   return (
+    <>
+        <Helmet>
+    <title>{foundPlan && foundPlan.name}</title>
+        <meta
+          name="description"
+          content={`information about ${foundPlan && foundPlan.name}, test it , check the exercises`}
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content={`${foundPlan && foundPlan.name}`} />
+        <meta
+          property="og:description"
+          content={`information about ${foundPlan && foundPlan.name}, test it , check the exercises`}
+        />
+    </Helmet>
     <section className={style.wrapper}>
        {foundPlan?
        <>
@@ -67,6 +81,7 @@ function SingleTrainingPlanPage() {
       <Loading />
       }
     </section>
+    </>
   )
 }
 

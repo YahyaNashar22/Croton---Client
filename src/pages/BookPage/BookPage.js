@@ -6,6 +6,7 @@ import {userStore} from "../../store"
 import axios from "axios"
 import BooksViewer from '../../components/BooksViewer/BooksViewer'
 import magnifier from "../../assets/icons/search.svg"
+import {Helmet} from "react-helmet-async"
 
 function BookPage() {
 
@@ -36,6 +37,20 @@ function BookPage() {
   const colors = changeColor(user.gender)
 
   return (
+    <>
+    <Helmet>
+    <title>Books</title>
+        <meta
+          name="description"
+          content="Online Book Library"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Books" />
+        <meta
+          property="og:description"
+          content="Online Book Library"
+        />
+    </Helmet>
     <section className={style.wrapper}> 
         <LatestBooks colors={colors} />
         <h2 className={style.sectionHeader}>
@@ -83,6 +98,7 @@ function BookPage() {
           <p>{page} / {Math.ceil(totalNB/10)}</p>
         </div>
     </section>
+    </>
   )
 }
 
