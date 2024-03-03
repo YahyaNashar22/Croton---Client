@@ -6,6 +6,21 @@ import {motion} from 'framer-motion'
 
 function LatestBooks({colors}) {
 
+  // defining the mobile state
+  const [mobile, setMobile] = useState(false);
+useEffect(()=>{
+  const handleResize = () =>{
+    if(window.innerWidth <= 768){
+      setMobile(true)
+    }else{
+      setMobile(false)
+  }
+}
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  return () => {window.removeEventListener('resize', handleResize)};
+},[])
+
   const [positionIndexes, setPositionIndexes] = useState([0,1,2,3,4,5,6,7,8,9]);
   const [latestBooks, setLatestBooks] = useState([])
 
@@ -57,10 +72,11 @@ function LatestBooks({colors}) {
     right5: {x:'90%', scale: 0.1 , zIndex: 5, opacity:0.3},
   }
 
-
-
   return (
     <section className={style.wrapper}>
+      {
+        !mobile ? 
+        <>
       <h1 className={style.header}>
         Latest
       </h1>
@@ -92,6 +108,10 @@ function LatestBooks({colors}) {
         <Loading />
       }
       <button className={`${style.next} ${style[colors]}`} type="button" onClick={handleNext}>Next</button>
+        </>
+        :
+        <h1 className={style.mobileHeader}>Welcome To Our Book Section !</h1>
+      }
       </section>
   );
 }

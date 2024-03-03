@@ -79,3 +79,8 @@
   border: 1px solid var(--pink);
   box-shadow: 5px 5px 0px var(--green);
 }
+.mobileHeader{
+  color: var(--white);
+  font-size: 48px;
+  text-align: center;
+}
