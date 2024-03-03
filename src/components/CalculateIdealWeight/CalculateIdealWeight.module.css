@@ -35,6 +35,10 @@
     transform: translateY(-10px);
     box-shadow: 0px 5px 5px var(--black);
 }
+.content{
+    font-family: "robotto";
+    font-size: 24px;
+}
 .calculatorContainer{
     display: flex;
     align-items: center;
@@ -45,6 +49,7 @@
     padding: 100px;
     border-radius: 16px;
     position: relative;
+    row-gap: 10px;
 }
 .genderSelector{
     padding: 10px;
@@ -55,9 +60,11 @@
     border-radius: 16px;
     outline: none;
     border: none;
+    font-family: "robotto";
 }
 .option{
     cursor: url('../../assets/cursors/hand.png'), auto !important;
+    font-family: "robotto";
 }
 .calculator{
     border: none;
@@ -68,6 +75,7 @@
     cursor: url("../../assets/cursors/txt.png"), auto !important;
     background-color: var(--white);
     border-bottom: 1px solid var(--green);
+    font-family: "robotto";
 }
 .calculator:focus::placeholder{
     opacity: 0;
@@ -83,6 +91,7 @@
     font-size: 16px;
     cursor: url("../../assets/cursors/hand.png"), auto !important;
     transition: 0.5s ease;
+    font-family: "robotto";
 }
 .calculate:active{
     box-shadow: 0px 0px 0px var(--black);
@@ -100,6 +109,7 @@
     width:80%;
     padding: 10px;
     transition: 0.5s ease;
+    font-family: "robotto";
 }
 .result:hover{
     scale: 1.05;

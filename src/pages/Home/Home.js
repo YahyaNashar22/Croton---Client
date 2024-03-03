@@ -14,7 +14,7 @@ function Home() {
   const header = useRef(null);
   useEffect(() => {
     const typed = new Typed(header.current, {
-      strings: ['A Healthy <span style="color:var(--accent-green); background-color:transparent">Body</style>','Sustains a Healthy <span style="color:var(--accent-green); background-color:transparent">Mind</span>', '<span style="color:var(--accent-green); background-color:transparent">Mens Sana in Corpore Sano</span>'],
+      strings: ['A Healthy <span style="color:var(--accent-green); background-color:transparent";>Body</style>','Sustains a Healthy <span style="color:var(--accent-green); background-color:transparent">Mind</span>', '<span style="color:var(--accent-green); background-color:transparent">Mens Sana in Corpore Sano</span>'],
       typeSpeed: 50,
       loop:true,
       loopCount: Infinity,
@@ -50,7 +50,7 @@ function Home() {
                 duration: 1,
             }}
           >
-              Founded in C. 710 BC as the Achaean colony of <i>Kroton</i>.<br/>
+              Founded in C. 710 BC as the Achaean colony of <i className={style.italic}>Kroton</i>.<br/>
               <span className={style.green}>Croton  </span>was especially celebrated for its success in the olympic games from 588 BC onward.
               It was the home of great athletes and philossophers alike.<br/>
               Hence the symbolic meaning that you can become better by learning and training.
@@ -85,10 +85,10 @@ function Home() {
                         duration: 1,
                       }}
           >
-            <li>We offer a huge library of <span className={style.green}>exercices</span> and <span className={style.green}>books</span>, to suit all your preferences!</li>
-            <li>We have a beautiful Arcade that has multiple <span className={style.green}>games</span> for you to try and boost your instincts!</li>
-            <li>If your looking to go on a diet and start eating healthy, we've got that covered for you as well within our <span className={style.green}>nutriction center</span> section, you will find <span className={style.green}>recipes</span> suggested by different users for you to pick whatever suits your diet plan.</li>
-            <li>Ever felt like you wanted to test your <span className={style.green}>IQ</span> ? Well, guess what, there's also a place for that within our pages ! Feel free to take on different tests anytime you want.</li>
+            <li className={style.listItem}>We offer a huge library of <span className={style.green}>exercices</span> and <span className={style.green}>books</span>, to suit all your preferences!</li>
+            <li className={style.listItem}>We have a beautiful Arcade that has multiple <span className={style.green}>games</span> for you to try and boost your instincts!</li>
+            <li className={style.listItem}>If your looking to go on a diet and start eating healthy, we've got that covered for you as well within our <span className={style.green}>nutriction center</span> section, you will find <span className={style.green}>recipes</span> suggested by different users for you to pick whatever suits your diet plan.</li>
+            <li className={style.listItem}>Ever felt like you wanted to test your <span className={style.green}>IQ</span> ? Well, guess what, there's also a place for that within our pages ! Feel free to take on different tests anytime you want.</li>
           </motion.ul>
         </motion.div>
         </article>
@@ -110,7 +110,7 @@ function Home() {
             }}
             >
             Our aim is to help build a better society with a better life style, most people focus on either building their strength , or their mind productivity. Only few really focus on the importance of builfing both sides for a healthier lifestyle and a more productive society.<br/>
-            The idea is originated from the old greek civilization , <i>-Hence the naming-</i>, Where almost all the population was skilled in various fields like philosophy, strengh, medicine, and many more. People back then were both warriors and great scholars at the same time, the criterias that made a very strong civilization that left its findings till the present day.
+            The idea is originated from the old greek civilization , <i className={style.italic}>-Hence the naming-</i>, Where almost all the population was skilled in various fields like philosophy, strengh, medicine, and many more. People back then were both warriors and great scholars at the same time, the criterias that made a very strong civilization that left its findings till the present day.
             </motion.p>
         <img src={girlFlyingBook} height={'400px'} width={'400px'} loading='lazy' alt='girl flying on book' />
         </article>

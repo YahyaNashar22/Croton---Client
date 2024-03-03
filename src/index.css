@@ -2,6 +2,10 @@
   font-family: 'poppins';
   src: url('./fonts/poppins.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'rbotto';
+  src: url('./fonts/Roboto-Black.ttf') format('truetype');
+}
 body{
   background-color: var(--white);
 }

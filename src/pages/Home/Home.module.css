@@ -16,6 +16,7 @@
     font-size: 64px;
     color: var(--white);
     background-color: transparent;
+    font-family: "poppins";
 }
 .callToAction{
     text-decoration: none;
@@ -62,6 +63,13 @@
     width: 50%;
     line-height: 50px;
     font-size: 26px;
+    font-family: 'robotto';
+}
+.listItem{
+    font-family: 'robotto';
+}
+.italic{
+    font-family: 'robotto';
 }
 .list{
     list-style:url('../../assets/cursors/book.png');

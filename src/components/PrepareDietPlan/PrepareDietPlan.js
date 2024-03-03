@@ -27,8 +27,7 @@ function PrepareDietPlan() {
             of total daily expenses per day.<br/>
             </p>
         </article>
-        <p className={style.example}>example of a</p>
-        <p className={style.example2}>1500 calories diet</p>
+        <p className={style.example}>example of a 1500 calories diet</p>
         <table className={style.table}>
             <thead className={style.tableHead}>
                 <tr className={style.tableRow}>

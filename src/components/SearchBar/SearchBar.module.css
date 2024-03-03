@@ -17,6 +17,7 @@
     border-radius: 16px;
     cursor: url('../../assets/cursors/txt.png'), auto !important;
     outline: none;
+    font-family: "robotto";
 }
 .maleColors{
     border: 1px solid var(--navy);
@@ -38,6 +39,7 @@
 .inp::placeholder{
     font-style: italic;
     color: var(--white);
+    font-family: "robotto";
 }
 .icon{
     position: absolute;

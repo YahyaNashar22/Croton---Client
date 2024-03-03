@@ -47,6 +47,8 @@
     display: flex;
     align-items: flex-start;
     font-size: 100%;
+    font-family: "robotto";
+    font-weight: 800;
 }
 .constant{
     text-align: start;
@@ -76,6 +78,7 @@
     border: none;
     border-bottom: 1px solid var(--green);
     background-color: var(--white);
+    font-family: "robotto";
 }
 .calculator:focus::placeholder{
     opacity: 0;
@@ -91,6 +94,7 @@
     font-size: 20px;
     cursor: url("../../assets/cursors/hand.png"), auto !important;
     transition: 0.5s ease;
+    font-family: "robotto";
 }
 .multiply:active{
     box-shadow: 0px 0px 0px var(--black);
@@ -105,6 +109,8 @@
     width:80%;
     padding: 10px;
     transition: 0.5s ease;
+    font-family: "robotto";
+
 }
 .output:hover{
     scale: 1.05;
@@ -134,6 +140,7 @@
     border: 2px solid var(--green);
     padding: 10px;
     font-size: 20px;
+    font-family: "robotto";
 }
 .green{
     color: var(--green);

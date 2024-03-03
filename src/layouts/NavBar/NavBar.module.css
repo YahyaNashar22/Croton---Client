@@ -1,5 +1,6 @@
 .wrapper, .disappear, .left, .middle, .right, .profilePic, .logo, .links, .signout, .activeLinks, .mobileWrapper, .mobileList, .burger, .menu, .close{
     background-color: transparent;
+    font-family: "poppins";
 }
 .wrapper{
     height: 150px;
