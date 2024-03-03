@@ -2,11 +2,14 @@ import React,{useState} from 'react'
 import style from "./GameViewer.module.css"
 import Gestures from '../Gestures/Gestures'
 import TicTacToe from "../TicTacToe/TicTacToe"
+import PlatformRunner from '../PlatformRunner/PlatformRunner'
 
 function GameViewer() {
 
 const [gesturesGame, setGesturesGame]=useState(false);
 const [ticTacToeGame, setTicTacToeGame]=useState(false);
+const [platformRunnerGame, setPlatformRunnerGame]=useState(false);
+
 
 
   return (
@@ -32,6 +35,15 @@ const [ticTacToeGame, setTicTacToeGame]=useState(false);
           </>
           :
           <button className={style.gameButton} type='buttton' onClick={()=>setGesturesGame(!gesturesGame)}>Gestures</button>
+        }
+        {
+          platformRunnerGame ? 
+          <>
+          <button className={style.gameButtonClose} type='buttton' onClick={()=>setPlatformRunnerGame(!platformRunnerGame)}>X</button>
+          <PlatformRunner />
+          </>
+          :
+          <button className={style.gameButton} type='buttton' onClick={()=>setPlatformRunnerGame(!platformRunnerGame)}>PlatformRunner</button>
         }
         </div>
     </section>
