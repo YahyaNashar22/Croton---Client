@@ -37,7 +37,7 @@ setPending();
   setUser(res.data.token.data);
   setPending();
   navigate('/');
-}).catch((err)=>{console.log(err.message)});
+}).catch((err)=>{setPending(); alert("incorrect credentials")});
 }
 
 //GOOGLE SIGN UP

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import style from "./NavBar.module.css"
 import {Link, useLocation, useNavigate} from "react-router-dom"
 import { menuStore, userStore } from '../../store'
-import omar from "../../assets/images/omar.png"
+import omar from "../../assets/icons/Logo.png"
 import burger from "../../assets/icons/burger.svg"
 import x from "../../assets/icons/x.svg"
 import axios from 'axios'
@@ -93,7 +93,7 @@ function NavBar() {
     </nav>
     {/* Mobile View */}
     <nav style={{top: visible ? '0' : '-200px', transition: 'top 0.3s'}} className={
-      `${style.mobileWrapper}`}>
+      `${style.mobileWrapper} ${scrolled ? style.scrolled : ""}`}>
       <aside className={style.left} onClick={()=>navigate('/')}>
           <img className={style.logo} src={omar} alt='logo' width={'100px'} height={'100px'} />
       </aside>

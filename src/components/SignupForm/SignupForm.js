@@ -52,7 +52,7 @@ const handleSubmit = (e)=>{
     setUser(res.data.userToken.data);
     setPending();
     navigate('/extrainfo');
-  }).catch((err)=>{console.log(err.message)});
+  }).catch((err)=>{setPending(); alert("incorrect credentials")});
   }
 
     //GOOGLE SIGN UP
