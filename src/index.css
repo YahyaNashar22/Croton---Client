@@ -31,7 +31,9 @@ input[type="number"]::-webkit-outer-spin-button {
 
 :root{
   --background-green:#DCE1B4;
-  --green:#92E3A9;
+  --green:#6AA67B;
+
+  /* --green:#92E3A9; */
   --accent1-green:#b3bf58;
   --accent-green:#92E3A9;
   --navy:#3E92CC;
