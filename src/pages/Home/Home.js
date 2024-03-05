@@ -70,15 +70,15 @@ function Home() {
               Hence the symbolic meaning that you can become better by learning and training.
           </motion.p>
           <motion.img
-                        initial={{ opacity: 0 ,x:100}}
-                        whileInView={{ opacity: 1, x:0}}
+                        initial={{ opacity: 0}}
+                        whileInView={{ opacity: 1}}
                         transition={{
                           ease: "easeIn",
                           stiffness: 260,
                           damping: 20,
                           duration: 1,
                       }}
-          src={coupleTraining} height={'400px'} width={'400px'} loading='lazy' alt='couple training' />
+          src={coupleTraining} height={'380px'} width={'380px'} loading='lazy' alt='couple training' />
         </article>
       </section>
       <section className={style.sections}>
@@ -87,15 +87,15 @@ function Home() {
         </h2>
         <article className={style.content}>
         <motion.img 
-                      initial={{ opacity: 0, x:-100}}
-                      whileInView={{ opacity: 1, x:0}}
+                      initial={{ opacity: 0}}
+                      whileInView={{ opacity: 1}}
                       transition={{
                         ease: "easeIn",
                         stiffness: 260,
                         damping: 20,
                         duration: 1,
                     }}
-        src={puzzlePiece} height={'400px'} width={'400px'} loading='lazy' alt='puzzle piece' />
+        src={puzzlePiece} height={'380px'} width={'380px'} loading='lazy' alt='puzzle piece' />
         <motion.div className={style.text}
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
@@ -139,7 +139,7 @@ function Home() {
                         damping: 20,
                         duration: 1,
                     }}
-        src={boyOverBook} height={'400px'} width={'400px'} loading='lazy' alt='boy over books' />
+        src={boyOverBook} height={'380px'} width={'380px'} loading='lazy' alt='boy over books' />
             <motion.p className={`${style.text} ${style.scrollable}`}
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
@@ -155,14 +155,14 @@ function Home() {
             </motion.p>
         <motion.img 
                       initial={{ opacity: 0, y:-100}}
-                      whileInView={{ opacity: 1, y:0}}
+                      whileInView={{ opacity: 1,y:0}}
                       transition={{
                         ease: "easeIn",
                         stiffness: 260,
                         damping: 20,
                         duration: 1,
                     }}
-        src={girlFlyingBook} height={'400px'} width={'400px'} loading='lazy' alt='girl flying on book' />
+        src={girlFlyingBook} height={'380px'} width={'380px'} loading='lazy' alt='girl flying on book' />
         </article>
       </section>
       <section className={style.sections}>
