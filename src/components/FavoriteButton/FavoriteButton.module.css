@@ -5,9 +5,9 @@
     transition: 0.5s ease;
     box-shadow: 2px 5px 0px var(--green);
     border: none;
-    position: absolute;
-    top: 14rem;
-    right: 10%;
+    position: fixed;
+    top: 15rem;
+    right: 1rem;
 }
 .favorite:active{
     transform: translateY(5px);
@@ -27,7 +27,7 @@ button.femaleColors:hover{
     background-color: var(--pink);
     color: var(--white);
 }
-@media (max-width:1117px){
+/* @media (max-width:1117px){
     .favorite{
         top: 45%;
     }
@@ -37,8 +37,13 @@ button.femaleColors:hover{
         top: 40%;
     }
 }
-@media (max-width:350px){
+@media (max-width:500px){
     .favorite{
-        top: 45%;
+        top: 30%;
     }
 }
+@media (max-width:350px){
+    .favorite{
+        top: 30%;
+    }
+} */
